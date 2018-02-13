@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  iFaceTime
+//
+//  Created by yesdgq on 2018/2/9.
+//  Copyright © 2018年 yesdgq. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "DTHMarco.h" // 所有宏头文件
+#import "Masonry.h"
+#import "MJExtension.h" // 模型转换
+#import "UIButton+Addition.h"
+#import "FileManageCommon.h" // 文件路径管理
+#import "UIImageView+Addition.h"
+#import "NSDate+Addition.h"
+#import "UIColor+Addition.h"
+//#import "MBProgressHUD+Addition.h" // 吐司
+#import "MBProgressHUD.h"
+//#import "DONG_CommonFunc.h"
+#import "DONG_AlertShowTool.h"
+#import "NSString+Dong.h"
+#import "UILabel+Addition.h"
+
+#endif /* PrefixHeader_pch */

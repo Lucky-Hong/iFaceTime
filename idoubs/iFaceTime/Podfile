@@ -1,0 +1,24 @@
+platform:ios, '10.0'
+
+inhibit_all_warnings!
+
+target 'iFaceTime' do
+    
+#    def shared_pods
+
+    pod 'Masonry',            '~> 1.0.2'
+    pod 'MJRefresh'
+    pod 'AFNetworking',       '~> 3.1.0'
+    pod 'ReactiveObjC'
+    pod 'IQKeyboardManager',  '~> 4.0.7'
+    pod 'MJExtension'
+    pod 'SDWebImage',         '~>3.7'
+    pod 'MBProgressHUD',      '~> 1.1.0'
+#    pod 'Reachability',       '~> 3.2'
+    pod 'CYLTabBarController', '~> 1.17.6'
+#    end
+end
+
+target 'iFaceTimeTests'  do
+#    shared_pods
+end
