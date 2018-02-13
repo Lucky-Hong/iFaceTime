@@ -116,6 +116,8 @@
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
 //        headerView.backgroundColor = [UIColor colorWithHex:DTH_BackgroundColor2];
 
+    
+    
         // 按钮
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setFrame:headerView.bounds];
