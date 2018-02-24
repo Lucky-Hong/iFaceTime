@@ -7,7 +7,6 @@
 //
 
 #import "IFTSearchBarView.h"
-#import "IFTSearchBarTextField.h"
 
 @implementation IFTSearchBarView
 
@@ -86,8 +85,6 @@
 }
 
 #pragma mark - UITextFieldDelegate
-
-
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (![string isEqualToString:@""]) {

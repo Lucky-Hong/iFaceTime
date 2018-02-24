@@ -1,5 +1,5 @@
 //
-//  IFTSearchBarTextField.h
+//  IFTContactListTableVC.h
 //  iFaceTime
 //
 //  Created by yesdgq on 2018/2/24.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IFTSearchBarTextField : UITextField
+@interface IFTContactListTableVC : UITableViewController
 
 @end
