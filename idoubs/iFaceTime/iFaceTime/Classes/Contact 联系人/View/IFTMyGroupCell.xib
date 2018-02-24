@@ -19,29 +19,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的群组" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5x-r3-O0Q">
-                        <rect key="frame" x="52" y="12" width="70" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_Right" translatesAutoresizingMaskIntoConstraints="NO" id="ZrR-Qa-0Vh">
+                        <rect key="frame" x="298" y="16" width="7" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="7" id="REI-2O-9FJ"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyGroup" translatesAutoresizingMaskIntoConstraints="NO" id="pC9-TW-saE">
+                        <rect key="frame" x="14" y="9.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="LAe-w7-aoi"/>
+                            <constraint firstAttribute="height" constant="25" id="X2r-Vc-xMn"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的群组" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5x-r3-O0Q">
+                        <rect key="frame" x="47" y="11.5" width="223" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Vs6-31-2hl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MyGroup" translatesAutoresizingMaskIntoConstraints="NO" id="pC9-TW-saE">
-                        <rect key="frame" x="22" y="13" width="22" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Arrow_Right" translatesAutoresizingMaskIntoConstraints="NO" id="ZrR-Qa-0Vh">
-                        <rect key="frame" x="304" y="17" width="6" height="12"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="b5x-r3-O0Q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5NG-hV-e3e"/>
+                    <constraint firstItem="pC9-TW-saE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="Fez-s7-2Bd"/>
+                    <constraint firstAttribute="trailing" secondItem="b5x-r3-O0Q" secondAttribute="trailing" constant="50" id="Nha-rO-FAH"/>
+                    <constraint firstItem="b5x-r3-O0Q" firstAttribute="leading" secondItem="pC9-TW-saE" secondAttribute="trailing" constant="8" id="RTe-Ck-Tp1"/>
+                    <constraint firstItem="ZrR-Qa-0Vh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="T5b-ob-7SL"/>
+                    <constraint firstItem="pC9-TW-saE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="b6f-d8-1Qm"/>
+                    <constraint firstAttribute="trailing" secondItem="ZrR-Qa-0Vh" secondAttribute="trailing" constant="15" id="pzu-bj-GmX"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="iconIV" destination="pC9-TW-saE" id="V6v-RV-dUe"/>
+                <outlet property="titleLabel" destination="b5x-r3-O0Q" id="3Ti-Nh-t0W"/>
+            </connections>
             <point key="canvasLocation" x="-30" y="105"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Arrow_Right" width="6" height="12"/>
-        <image name="MyGroup" width="28" height="23"/>
+        <image name="MyGroup" width="28" height="28"/>
     </resources>
 </document>

@@ -40,6 +40,8 @@
 		11AFB8F92032910600DF0104 /* IFTContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AFB8F72032910600DF0104 /* IFTContactCell.m */; };
 		11AFB8FA2032910600DF0104 /* IFTContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AFB8F82032910600DF0104 /* IFTContactCell.xib */; };
 		11AFB8FD20329A8B00DF0104 /* IFTSuperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AFB8FC20329A8B00DF0104 /* IFTSuperCell.m */; };
+		11DD239220410E0F001210BD /* IFTSection1Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD239120410E0F001210BD /* IFTSection1Model.m */; };
+		11DD239520410E6D001210BD /* IFTContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD239420410E6D001210BD /* IFTContactModel.m */; };
 		11F3914B20200E15005CDFFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3914A20200E15005CDFFA /* AppDelegate.m */; };
 		11F3914E20200E15005CDFFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3914D20200E15005CDFFA /* ViewController.m */; };
 		11F3915120200E15005CDFFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F3914F20200E15005CDFFA /* Main.storyboard */; };
@@ -323,6 +325,10 @@
 		11AFB8F82032910600DF0104 /* IFTContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTContactCell.xib; sourceTree = "<group>"; };
 		11AFB8FB20329A8B00DF0104 /* IFTSuperCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTSuperCell.h; sourceTree = "<group>"; };
 		11AFB8FC20329A8B00DF0104 /* IFTSuperCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTSuperCell.m; sourceTree = "<group>"; };
+		11DD239020410E0F001210BD /* IFTSection1Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTSection1Model.h; sourceTree = "<group>"; };
+		11DD239120410E0F001210BD /* IFTSection1Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTSection1Model.m; sourceTree = "<group>"; };
+		11DD239320410E6D001210BD /* IFTContactModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTContactModel.h; sourceTree = "<group>"; };
+		11DD239420410E6D001210BD /* IFTContactModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTContactModel.m; sourceTree = "<group>"; };
 		11F3914620200E15005CDFFA /* iFaceTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFaceTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F3914920200E15005CDFFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11F3914A20200E15005CDFFA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -472,6 +478,7 @@
 			children = (
 				113DE06320301A80000705E9 /* IFTContactVC.h */,
 				113DE06420301A80000705E9 /* IFTContactVC.m */,
+				11DD237820410DAB001210BD /* Model */,
 				11AFB8D920328D8B00DF0104 /* View */,
 			);
 			path = "Contact 联系人";
@@ -642,6 +649,17 @@
 				11AFB8F82032910600DF0104 /* IFTContactCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		11DD237820410DAB001210BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11DD239020410E0F001210BD /* IFTSection1Model.h */,
+				11DD239120410E0F001210BD /* IFTSection1Model.m */,
+				11DD239320410E6D001210BD /* IFTContactModel.h */,
+				11DD239420410E6D001210BD /* IFTContactModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		11F3913D20200E15005CDFFA = {
@@ -1218,6 +1236,8 @@
 				118DF042202D388C00A309C7 /* UIImageView+Addition.m in Sources */,
 				118DF046202D388C00A309C7 /* UIView+Addition.m in Sources */,
 				113DE06B20301AB4000705E9 /* IFTScanCodeVC.m in Sources */,
+				11DD239220410E0F001210BD /* IFTSection1Model.m in Sources */,
+				11DD239520410E6D001210BD /* IFTContactModel.m in Sources */,
 				11F3914B20200E15005CDFFA /* AppDelegate.m in Sources */,
 				118DF041202D388C00A309C7 /* UIColor+Addition.m in Sources */,
 				118DF01F202D37FD00A309C7 /* FileManageCommon.m in Sources */,

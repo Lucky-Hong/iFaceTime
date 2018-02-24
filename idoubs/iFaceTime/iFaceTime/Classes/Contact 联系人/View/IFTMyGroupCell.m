@@ -7,6 +7,14 @@
 //
 
 #import "IFTMyGroupCell.h"
+#import "IFTSection1Model.h"
+
+@interface IFTMyGroupCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *iconIV;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@end
 
 @implementation IFTMyGroupCell
 
@@ -17,7 +25,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     
 }
 
@@ -28,6 +36,13 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
+}
+
+- (void)setModel:(nonnull id)model IndexPath:(nullable NSIndexPath *)indexPath {
+    NSArray *dataArray = model;
+    IFTSection1Model *dataModel = dataArray[indexPath.row];
+    [self.iconIV setImage:[UIImage imageNamed:dataModel.iconName]];
+    self.titleLabel.text = dataModel.title;
 }
 
 @end

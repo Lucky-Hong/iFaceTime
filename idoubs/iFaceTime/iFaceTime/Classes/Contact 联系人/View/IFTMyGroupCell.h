@@ -11,5 +11,6 @@
 @interface IFTMyGroupCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
+- (void)setModel:(nonnull id)model IndexPath:(nullable NSIndexPath *)indexPath;
 
 @end
