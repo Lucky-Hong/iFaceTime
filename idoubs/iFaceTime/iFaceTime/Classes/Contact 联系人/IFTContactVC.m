@@ -11,6 +11,8 @@
 #import "IFTMyGroupCell.h"
 #import "IFTContactCell.h"
 #import "IFTSection1Model.h"
+#import "IFTContainerCell.h"
+#import "IFTSearchBarView.h"
 
 @interface IFTContactVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -33,6 +35,8 @@
     [_section1ModelArray addObject:convenienceServicesMdoel];
     
     [self setupTableView];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +54,19 @@
     tableView.delegate = self;
     self.tableView = tableView;
     [self.view addSubview:tableView];
+    
+    UIView *tableHeadBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 51)];
+    tableHeadBgView.backgroundColor = [UIColor colorWithHex:@"#F0F0F6"];
+    self.tableView.tableHeaderView = tableHeadBgView;
+    IFTSearchBarView *searchBar = [[IFTSearchBarView alloc] init];
+    [tableHeadBgView addSubview:searchBar];
+    [searchBar mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.tableView.tableHeaderView.mas_left).offset(15);
+        make.right.equalTo(self.tableView.tableHeaderView.mas_right).offset(-15);
+        make.centerY.equalTo(self.tableView.tableHeaderView.mas_centerY);
+        make.height.equalTo(@32);
+    }];
+    
 }
 
 #pragma mark - UITableViewDataSource
@@ -74,8 +91,7 @@
         return cell;
         
     } else if (indexPath.section == 1) {
-        IFTContactCell *cell = [IFTContactCell cellWithTableView:tableView];
-        
+        IFTContainerCell *cell = [IFTContainerCell cellWithTableView:tableView];
         return cell;
         
     }
