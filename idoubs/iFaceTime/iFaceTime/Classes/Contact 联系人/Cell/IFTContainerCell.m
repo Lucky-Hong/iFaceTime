@@ -9,92 +9,79 @@
  */
 
 //
-//  IFTCallRecordsVC.m
+//  IFTContainerCell.m
 //  iFaceTime
 //
-//  Created by yesdgq on 2018/2/11.
+//  Created by yesdgq on 2018/2/24.
 //  Copyright © 2018年 yesdgq. All rights reserved.
 //
+
+#import "IFTContainerCell.h"
+#import "IFTSlideHeaderLabel.h"
+#import "IFTContactListTableVC.h"
+
 
 /** 滑动标题栏高度 */
 static const CGFloat TitleHeight = 40.f;
 /** 滑动标题栏宽度 */
-static const CGFloat LabelWidth = kMainScreenWidth/3;
+static const CGFloat LabelWidth = 80.f;
 
-#import "IFTCallRecordsVC.h"
-#import "CYLTabBarController.h"
-#import "IFTSearchBarView.h"
-#import "IFTSlideHeaderLabel.h"
-#import "IFTCallRecordsTableVC.h"
-
-@interface IFTCallRecordsVC () <UIScrollViewDelegate>
-
-@property (nonatomic, strong) UIScrollView *containerScrollView;
+@interface IFTContainerCell() <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *titleScroll;        // 标题栏scrollView
 @property (nonatomic, strong) UIScrollView *contentScroll;      // 内容栏scrollView
 @property (nonatomic, strong) CALayer *bottomLine;              // 滑动短线
 @property (nonatomic, copy) NSString *identifier;               // 滑动标题标识
 @property (nonatomic, copy) NSArray *scrolTitleArr;             // 标题数组
+@property (nonatomic, strong) NSMutableArray *childViewControllers;
 
 @end
 
-@implementation IFTCallRecordsVC
+@implementation IFTContainerCell
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"通话记录";
-    self.automaticallyAdjustsScrollViewInsets = NO;
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+      [self setupContentView];
+    }
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
     
-    [self setupContectView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
++ (instancetype)cellWithTableView:(UITableView *)tableView {
+    static NSString *ID = @"IFTContainerCell";
+    IFTContainerCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) cell = [[IFTContainerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
 }
 
-- (void)setupContectView {
-    float height = CYL_IS_IPHONE_X ? kMainScreenHeight-64-65:kMainScreenHeight-64-49;
-    _containerScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, kMainScreenWidth, height)];
-    [self.view addSubview:_containerScrollView];
-    _containerScrollView.contentSize = CGSizeMake(kMainScreenWidth, height + 50);
-    [self addSearchBarView];
-    [self addScrollPageView];
-}
-
-- (void)addSearchBarView {
-    UIView *searchBarBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 50)];
-    searchBarBgView.backgroundColor = [UIColor colorWithHex:@"#F0F0F6"];
-    [_containerScrollView addSubview:searchBarBgView];
-    IFTSearchBarView *searchBar = [[IFTSearchBarView alloc] init];
-    [searchBarBgView addSubview:searchBar];
-    [searchBar mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(searchBarBgView.mas_left).offset(15);
-        make.right.equalTo(searchBarBgView.mas_right).offset(-15);
-        make.centerY.equalTo(searchBarBgView.mas_centerY);
-        make.height.equalTo(@32);
-    }];
-}
-
-- (void)addScrollPageView {
-    self.scrolTitleArr = @[@"全部通话", @"未接通话", @"群聊通话"];
+- (void)setupContentView {
+    self.scrolTitleArr = @[@"全部联系人", @"家庭联系人", @"同学" , @"同事" , @"驴友"];
+    self.childViewControllers = [NSMutableArray arrayWithCapacity:0];
+    
     [self constructSlideHeaderView];
     [self constructContentView];
 }
 
 // 添加滚动标题栏
 - (void)constructSlideHeaderView {
-    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, kMainScreenWidth, 40)];
-//        backgroundView.backgroundColor = [UIColor redColor];
-    [self.containerScrollView addSubview:backgroundView];
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0,0, kMainScreenWidth, 40)];
+    //    backgroundView.backgroundColor = [UIColor redColor];
+    [self.contentView addSubview:backgroundView];
     
-    self.titleScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 40)]; // 滚动窗口
+    self.titleScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0,0, kMainScreenWidth, 40)]; // 滚动窗口
     //        _titleScroll.backgroundColor = [UIColor greenColor];
     self.titleScroll.showsHorizontalScrollIndicator = NO;
     self.titleScroll.showsVerticalScrollIndicator = NO;
@@ -153,23 +140,24 @@ static const CGFloat LabelWidth = kMainScreenWidth/3;
 
 /** 添加正文内容页 */
 - (void)constructContentView {
-    self.contentScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 90, kMainScreenWidth, kMainScreenHeight - 64 - 40 - 49)]; // 滚动窗口
+    self.contentScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 40, kMainScreenWidth, kMainScreenHeight - 64 - 40 - 49)]; // 滚动窗口
     self.contentScroll.scrollsToTop = NO;
     self.contentScroll.showsHorizontalScrollIndicator = NO;
     self.contentScroll.pagingEnabled = YES;
     self.contentScroll.delegate = self;
-    [self.containerScrollView addSubview:self.contentScroll];
+    [self.contentView addSubview:self.contentScroll];
     
     // 添加子控制器
     for (int i=0; i<self.scrolTitleArr.count ;i++) {
         
-        IFTCallRecordsTableVC *callRecordsVC = [[IFTCallRecordsTableVC alloc] init];
-        [self addChildViewController:callRecordsVC];
+        IFTContactListTableVC *episodesVC = [[IFTContactListTableVC alloc] init];
+        [self.childViewControllers addObject:episodesVC];
+        //                    episodesVC.filmSetsArr = self.filmSetsArr;
         
     }
     
     // 添加默认控制器
-    IFTCallRecordsTableVC *vc = [self.childViewControllers firstObject];
+    IFTContactListTableVC *vc = [self.childViewControllers firstObject];
     vc.view.frame = self.contentScroll.bounds;
     [self.contentScroll addSubview:vc.view];
     //        self.needScrollToTopPage = self.childViewControllers[0];
@@ -251,5 +239,37 @@ static const CGFloat LabelWidth = kMainScreenWidth/3;
     self.bottomLine.frame = CGRectMake(modulus * self.titleScroll.contentSize.width, self.titleScroll.frame.size.height-22+20, LabelWidth, 2);
     
 }
+
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+//    if ([NSStringFromClass(touch.view.class) isEqualToString:@"FirstTableView"]) {
+//        // 如果是FirstTableView的范围，那么手势不生效
+//        return NO;
+//    }
+//    return YES;
+//}
+
+#pragma mark - Setter
+
+- (void)setCellCanScroll:(BOOL)cellCanScroll {
+    _cellCanScroll = cellCanScroll;
+    
+    for (IFTContactListTableVC *vc in _childViewControllers) {
+        vc.canScroll = cellCanScroll;
+        if (!cellCanScroll) { // 如果cell不能滑动，代表到了顶部，修改所有子vc的状态回到顶部
+            vc.tableView.contentOffset = CGPointZero;
+        }
+    }
+}
+
+- (void)setIsRefresh:(BOOL)isRefresh {
+    _isRefresh = isRefresh;
+    
+    for (IFTContactListTableVC *vc in self.childViewControllers) {
+        if ([vc.title isEqualToString:self.currentTagStr]) {
+            vc.isRefresh = isRefresh;
+        }
+    }
+}
+
 
 @end

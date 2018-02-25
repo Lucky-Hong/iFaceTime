@@ -20,6 +20,11 @@
 
 @interface IFTContainerCell : UITableViewCell
 
-+ (instancetype _Nullable )cellWithTableView:(UITableView *_Nonnull)tableView;
+@property (nonatomic, assign) BOOL cellCanScroll;
+@property (nonatomic, assign) BOOL isRefresh;
+
+@property (nonatomic, copy, nonnull) NSString *currentTagStr;
+
++ (instancetype _Nullable)cellWithTableView:(UITableView *_Nonnull)tableView;
 
 @end

@@ -20,4 +20,7 @@
 
 @interface IFTContactListTableVC : UITableViewController
 
+@property (nonatomic, assign) BOOL canScroll; // tableView是否可以滑动
+@property (nonatomic, assign) BOOL isRefresh;
+
 @end

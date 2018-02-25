@@ -23,12 +23,13 @@
 #import "IFTSection1Model.h"
 #import "IFTContainerCell.h"
 #import "IFTSearchBarView.h"
+#import "IFTBaseTableView.h"
 
-@interface IFTContactVC () <UITableViewDelegate, UITableViewDataSource>
+@interface IFTContactVC () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) IFTBaseTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *section1ModelArray;
-
+@property (nonatomic, strong) IFTContainerCell *containerCell; // section1 容器cell
 
 @end
 
@@ -38,6 +39,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"联系人";
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.section1ModelArray = [NSMutableArray arrayWithCapacity:0];
     IFTSection1Model *myGroupMdoel = [IFTSection1Model initWithTitle:@"我的群组" iconName:@"MyGroup"];
@@ -47,7 +49,7 @@
     
     [self setupTableView];
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:@"leaveTop" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,12 +57,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
 - (void)setupTableView {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    IFTBaseTableView *tableView = [[IFTBaseTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.dataSource = self;
     tableView.delegate = self;
     self.tableView = tableView;
@@ -103,6 +109,7 @@
         
     } else if (indexPath.section == 1) {
         IFTContainerCell *cell = [IFTContainerCell cellWithTableView:tableView];
+        _containerCell = cell;
         return cell;
     }
     return nil;
@@ -114,7 +121,7 @@
     if (indexPath.section == 0) {
         return 50;
     } else {
-        return CYL_IS_IPHONE_X ? kMainScreenHeight -64 - 65 : kMainScreenHeight -64 - 49;
+        return CYL_IS_IPHONE_X ? kMainScreenHeight - 64 - 65 : kMainScreenHeight - 64 - 49;
     }
 }
 
@@ -171,5 +178,41 @@
     //    groupModel.isOpened = !groupModel.isOpened;
     //    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:sender.tag] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat bottomCellOffset = [_tableView rectForSection:1].origin.y - 64;
+
+    if (scrollView.contentOffset.y >= bottomCellOffset) {
+        scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
+        if (self.canScroll) {
+            self.canScroll = NO;
+            self.containerCell.cellCanScroll = YES;
+        }
+    } else {
+        if (!self.canScroll) { // 子视图没到顶部
+            scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
+        }
+    }
+    self.tableView.showsVerticalScrollIndicator = _canScroll? YES:NO;
+}
+
+/**
+ 同时识别多个手势
+ 
+ @param gestureRecognizer gestureRecognizer description
+ @param otherGestureRecognizer otherGestureRecognizer description
+ @return return value description
+ */
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+#pragma mark - notify
+
+- (void)changeScrollStatus { // 改变主视图的状态
+    self.canScroll = YES;
+    self.containerCell.cellCanScroll = NO;
+}
+
 
 @end

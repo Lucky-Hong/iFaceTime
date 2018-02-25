@@ -21,4 +21,6 @@
 
 @interface IFTContactVC : UIViewController
 
+@property (nonatomic, assign) BOOL canScroll; // tableView是否可以滑动
+
 @end
