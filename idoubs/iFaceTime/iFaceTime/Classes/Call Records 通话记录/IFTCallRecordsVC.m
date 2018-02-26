@@ -27,7 +27,7 @@ static const CGFloat LabelWidth = kMainScreenWidth/3;
 #import "IFTSlideHeaderLabel.h"
 #import "IFTCallRecordsTableVC.h"
 
-@interface IFTCallRecordsVC () <UIScrollViewDelegate>
+@interface IFTCallRecordsVC () <UIScrollViewDelegate, UITableViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *containerScrollView;
 
@@ -64,6 +64,7 @@ static const CGFloat LabelWidth = kMainScreenWidth/3;
     _containerScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, kMainScreenWidth, height)];
     [self.view addSubview:_containerScrollView];
     _containerScrollView.contentSize = CGSizeMake(kMainScreenWidth, height + 50);
+    _containerScrollView.delegate = self;
     [self addSearchBarView];
     [self addScrollPageView];
 }
@@ -158,12 +159,15 @@ static const CGFloat LabelWidth = kMainScreenWidth/3;
     self.contentScroll.showsHorizontalScrollIndicator = NO;
     self.contentScroll.pagingEnabled = YES;
     self.contentScroll.delegate = self;
+    self.contentScroll.tag = 88888;
+    
     [self.containerScrollView addSubview:self.contentScroll];
     
     // 添加子控制器
     for (int i=0; i<self.scrolTitleArr.count ;i++) {
         
         IFTCallRecordsTableVC *callRecordsVC = [[IFTCallRecordsTableVC alloc] init];
+        callRecordsVC.tableView.delegate = self;
         [self addChildViewController:callRecordsVC];
         
     }
@@ -184,72 +188,121 @@ static const CGFloat LabelWidth = kMainScreenWidth/3;
 
 /** 滚动结束后调用（代码导致的滚动停止） */
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    // 获得索引
-    NSUInteger index = scrollView.contentOffset.x / self.contentScroll.frame.size.width;
-    // 滚动标题栏
-    IFTSlideHeaderLabel *titleLable = (IFTSlideHeaderLabel *)self.titleScroll.subviews[index];
-    
-    // 把下划线与titieLabel的frame绑定(下划线滑动方式)
-    self.bottomLine.frame = CGRectMake(titleLable.frame.origin.x, self.titleScroll.frame.size.height-22+20, LabelWidth, 2);
-    
-    CGFloat offsetx = titleLable.center.x - self.titleScroll.frame.size.width * 0.5;
-    
-    CGFloat offsetMax = self.titleScroll.contentSize.width - self.titleScroll.frame.size.width;
-    
-    if (offsetx < 0) {
-        offsetx = 0;
-    } else if (offsetx > offsetMax){
-        offsetx = offsetMax;
-    }
-    
-    CGPoint offset = CGPointMake(offsetx, self.titleScroll.contentOffset.y);
-    [self.titleScroll setContentOffset:offset animated:YES];
-    
-    // 将控制器添加到contentScroll
-    UIViewController *vc = self.childViewControllers[index];
-    //    vc.index = index;
-    
-    [self.titleScroll.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if (idx != index) {
-            IFTSlideHeaderLabel *temlabel = self.titleScroll.subviews[idx];
-            temlabel.scale = 0.0;
+    if (scrollView.tag == 88888) {
+        // 获得索引
+        NSUInteger index = scrollView.contentOffset.x / self.contentScroll.frame.size.width;
+        // 滚动标题栏
+        IFTSlideHeaderLabel *titleLable = (IFTSlideHeaderLabel *)self.titleScroll.subviews[index];
+        
+        // 把下划线与titieLabel的frame绑定(下划线滑动方式)
+        self.bottomLine.frame = CGRectMake(titleLable.frame.origin.x, self.titleScroll.frame.size.height-22+20, LabelWidth, 2);
+        
+        CGFloat offsetx = titleLable.center.x - self.titleScroll.frame.size.width * 0.5;
+        
+        CGFloat offsetMax = self.titleScroll.contentSize.width - self.titleScroll.frame.size.width;
+        
+        if (offsetx < 0) {
+            offsetx = 0;
+        } else if (offsetx > offsetMax){
+            offsetx = offsetMax;
         }
-    }];
-    
-    //    [self setScrollToTopWithTableViewIndex:index];
-    
-    if (vc.view.superview) return;//阻止vc重复添加
-    vc.view.frame = scrollView.bounds;
-    [self.contentScroll addSubview:vc.view];
-    
-    
+        
+        CGPoint offset = CGPointMake(offsetx, self.titleScroll.contentOffset.y);
+        [self.titleScroll setContentOffset:offset animated:YES];
+        
+        // 将控制器添加到contentScroll
+        UIViewController *vc = self.childViewControllers[index];
+        //    vc.index = index;
+        
+        [self.titleScroll.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            if (idx != index) {
+                IFTSlideHeaderLabel *temlabel = self.titleScroll.subviews[idx];
+                temlabel.scale = 0.0;
+            }
+        }];
+        
+        //    [self setScrollToTopWithTableViewIndex:index];
+        
+        if (vc.view.superview) return;//阻止vc重复添加
+        vc.view.frame = scrollView.bounds;
+        [self.contentScroll addSubview:vc.view];
+        
+    }
+    DONG_Log(@"滚动结束后调用（代码导致的滚动停止)");
 }
 
 /** 滚动结束（手势导致的滚动停止） */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [self scrollViewDidEndScrollingAnimation:scrollView];
+    if (scrollView.tag == 88888) {
+        [self scrollViewDidEndScrollingAnimation:scrollView];
+    }
+    
+    if (self.containerScrollView.contentOffset.y < 0) {
+        [self.containerScrollView setContentOffset:CGPointZero animated:YES];
+    }
+    
+    DONG_Log(@"滚动结束后调用（手势导致的滚动停止)");
 }
 
 /** 正在滚动 */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // 取出绝对值 避免最左边往右拉时形变超过1
-    CGFloat value = ABS(scrollView.contentOffset.x / scrollView.frame.size.width);
-    NSUInteger leftIndex = (int)value;
-    NSUInteger rightIndex = leftIndex + 1;
-    CGFloat scaleRight = value - leftIndex;
-    CGFloat scaleLeft = 1 - scaleRight;
-    IFTSlideHeaderLabel *labelLeft = self.titleScroll.subviews[leftIndex];
-    labelLeft.scale = scaleLeft;
-    // 考虑到最后一个板块，如果右边已经没有板块了 就不在下面赋值scale了
-    if (rightIndex < self.titleScroll.subviews.count) {
-        IFTSlideHeaderLabel *labelRight = self.titleScroll.subviews[rightIndex];
-        labelRight.scale = scaleRight;
+    if (scrollView.tag == 88888) {
+        // 取出绝对值 避免最左边往右拉时形变超过1
+        CGFloat value = ABS(scrollView.contentOffset.x / scrollView.frame.size.width);
+        NSUInteger leftIndex = (int)value;
+        NSUInteger rightIndex = leftIndex + 1;
+        CGFloat scaleRight = value - leftIndex;
+        CGFloat scaleLeft = 1 - scaleRight;
+        IFTSlideHeaderLabel *labelLeft = self.titleScroll.subviews[leftIndex];
+        labelLeft.scale = scaleLeft;
+        // 考虑到最后一个板块，如果右边已经没有板块了 就不在下面赋值scale了
+        if (rightIndex < self.titleScroll.subviews.count) {
+            IFTSlideHeaderLabel *labelRight = self.titleScroll.subviews[rightIndex];
+            labelRight.scale = scaleRight;
+        }
+        
+        // 下划线即时滑动
+        float modulus = scrollView.contentOffset.x/self.contentScroll.contentSize.width;
+        self.bottomLine.frame = CGRectMake(modulus * self.titleScroll.contentSize.width, self.titleScroll.frame.size.height-22+20, LabelWidth, 2);
+        
+    } else {
+        
+        // 判断是否是子视图滚动
+        BOOL isContent = [scrollView isKindOfClass:[UITableView class]];
+        if (isContent) { // 滚动子视图
+            BOOL isScrollDown = self.containerScrollView.contentOffset.y <= 0;
+            CGFloat offsetY = scrollView.contentOffset.y + self.containerScrollView.contentOffset.y;
+            if (isScrollDown) { // 下拉
+                [scrollView setContentOffset:CGPointZero];
+                [self.containerScrollView setContentOffset:CGPointMake(0, offsetY)];
+               
+            } else if (!isScrollDown) { // 上拉
+                
+                if (scrollView.contentOffset.y < 50) {
+                    [self.containerScrollView setContentOffset:CGPointMake(0, scrollView.contentOffset.y)];
+                } else {
+                    [self.containerScrollView setContentOffset:CGPointMake(0, 50)];
+                }
+            }
+        } else if (scrollView == self.containerScrollView) { // 滚动父视图
+            if (self.containerScrollView.contentOffset.y >= 50) {
+                [self.containerScrollView setContentOffset:CGPointMake(0, 50)];
+            }
+        }
+        DONG_Log(@"scrollView.contentoffset-->%f", scrollView.contentOffset.y)
     }
-    
-    // 下划线即时滑动
-    float modulus = scrollView.contentOffset.x/self.contentScroll.contentSize.width;
-    self.bottomLine.frame = CGRectMake(modulus * self.titleScroll.contentSize.width, self.titleScroll.frame.size.height-22+20, LabelWidth, 2);
-    
 }
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    // 处理因子视图向下拖拽而导致父视图无法回到原位置
+    BOOL isContent = [scrollView isKindOfClass:[UITableView class]];
+    if (isContent) {
+        CGFloat offsetY = self.containerScrollView.contentOffset.y;
+        if (offsetY < 0) {
+            [self.containerScrollView setContentOffset:CGPointZero animated:YES];
+        }
+    }
+}
+
 
 @end
