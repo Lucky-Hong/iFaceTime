@@ -29,7 +29,9 @@
 
 @property (nonatomic, strong) IFTBaseTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *section1ModelArray;
-@property (nonatomic, strong) IFTContainerCell *containerCell; // section1 容器cell
+@property (nonatomic, strong) IFTContainerCell *containerCell;      // section1 容器cell
+
+@property (nonatomic, assign) BOOL canScroll; // tableView是否可以滑动(默认为YES)
 
 @end
 
@@ -40,6 +42,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"联系人";
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.canScroll = YES;
     
     self.section1ModelArray = [NSMutableArray arrayWithCapacity:0];
     IFTSection1Model *myGroupMdoel = [IFTSection1Model initWithTitle:@"我的群组" iconName:@"MyGroup"];
@@ -49,7 +52,7 @@
     
     [self setupTableView];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:@"leaveTop" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:@"ContactLeaveTop" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,7 +74,7 @@
     tableView.delegate = self;
     self.tableView = tableView;
     [self.view addSubview:tableView];
-    
+    // tableHeaderView
     UIView *tableHeadBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 51)];
     tableHeadBgView.backgroundColor = [UIColor colorWithHex:@"#F0F0F6"];
     self.tableView.tableHeaderView = tableHeadBgView;
@@ -186,7 +189,7 @@
         scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
         if (self.canScroll) {
             self.canScroll = NO;
-            self.containerCell.cellCanScroll = YES;
+            self.containerCell.cellShouldScroll = YES;
         }
     } else {
         if (!self.canScroll) { // 子视图没到顶部
@@ -196,22 +199,11 @@
     self.tableView.showsVerticalScrollIndicator = _canScroll? YES:NO;
 }
 
-/**
- 同时识别多个手势
- 
- @param gestureRecognizer gestureRecognizer description
- @param otherGestureRecognizer otherGestureRecognizer description
- @return return value description
- */
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    return YES;
-}
-
 #pragma mark - notify
 
 - (void)changeScrollStatus { // 改变主视图的状态
     self.canScroll = YES;
-    self.containerCell.cellCanScroll = NO;
+    self.containerCell.cellShouldScroll = NO;
 }
 
 

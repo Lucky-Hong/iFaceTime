@@ -250,26 +250,17 @@ static const CGFloat LabelWidth = 80.f;
 
 #pragma mark - Setter
 
-- (void)setCellCanScroll:(BOOL)cellCanScroll {
-    _cellCanScroll = cellCanScroll;
-    
+- (void)setCellShouldScroll:(BOOL)cellShouldScroll {
     for (IFTContactListTableVC *vc in _childViewControllers) {
-        vc.canScroll = cellCanScroll;
-        if (!cellCanScroll) { // 如果cell不能滑动，代表到了顶部，修改所有子vc的状态回到顶部
+        vc.canScroll = cellShouldScroll;
+        if (!cellShouldScroll) { // 如果cell不能滑动，代表到了顶部，修改所有子vc的状态回到顶部
             vc.tableView.contentOffset = CGPointZero;
         }
     }
+    _cellShouldScroll = cellShouldScroll;
 }
 
-- (void)setIsRefresh:(BOOL)isRefresh {
-    _isRefresh = isRefresh;
-    
-    for (IFTContactListTableVC *vc in self.childViewControllers) {
-        if ([vc.title isEqualToString:self.currentTagStr]) {
-            vc.isRefresh = isRefresh;
-        }
-    }
-}
+
 
 
 @end
