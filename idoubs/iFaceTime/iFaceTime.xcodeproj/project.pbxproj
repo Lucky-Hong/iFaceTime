@@ -62,6 +62,8 @@
 		11DD8248204551A4002114B1 /* UIWindow+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD8247204551A4002114B1 /* UIWindow+Addition.m */; };
 		11DD824B2045568C002114B1 /* ITFContactInfoHeadBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD824A2045568C002114B1 /* ITFContactInfoHeadBgView.m */; };
 		11DD824D2045569A002114B1 /* ITFContactInfoHeadBgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11DD824C2045569A002114B1 /* ITFContactInfoHeadBgView.xib */; };
+		11DD825220455F84002114B1 /* IFTContactInfoBottomControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11DD825120455F84002114B1 /* IFTContactInfoBottomControl.xib */; };
+		11DD825520456769002114B1 /* IFTContactInfoBottomControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD825420456769002114B1 /* IFTContactInfoBottomControl.m */; };
 		11F3914B20200E15005CDFFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3914A20200E15005CDFFA /* AppDelegate.m */; };
 		11F3914E20200E15005CDFFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3914D20200E15005CDFFA /* ViewController.m */; };
 		11F3915120200E15005CDFFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F3914F20200E15005CDFFA /* Main.storyboard */; };
@@ -387,6 +389,9 @@
 		11DD82492045568C002114B1 /* ITFContactInfoHeadBgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITFContactInfoHeadBgView.h; sourceTree = "<group>"; };
 		11DD824A2045568C002114B1 /* ITFContactInfoHeadBgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITFContactInfoHeadBgView.m; sourceTree = "<group>"; };
 		11DD824C2045569A002114B1 /* ITFContactInfoHeadBgView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITFContactInfoHeadBgView.xib; sourceTree = "<group>"; };
+		11DD825120455F84002114B1 /* IFTContactInfoBottomControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTContactInfoBottomControl.xib; sourceTree = "<group>"; };
+		11DD825320456769002114B1 /* IFTContactInfoBottomControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTContactInfoBottomControl.h; sourceTree = "<group>"; };
+		11DD825420456769002114B1 /* IFTContactInfoBottomControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTContactInfoBottomControl.m; sourceTree = "<group>"; };
 		11F3914620200E15005CDFFA /* iFaceTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFaceTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F3914920200E15005CDFFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11F3914A20200E15005CDFFA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -825,6 +830,9 @@
 				11DD82492045568C002114B1 /* ITFContactInfoHeadBgView.h */,
 				11DD824A2045568C002114B1 /* ITFContactInfoHeadBgView.m */,
 				11DD824C2045569A002114B1 /* ITFContactInfoHeadBgView.xib */,
+				11DD825320456769002114B1 /* IFTContactInfoBottomControl.h */,
+				11DD825420456769002114B1 /* IFTContactInfoBottomControl.m */,
+				11DD825120455F84002114B1 /* IFTContactInfoBottomControl.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1245,6 +1253,7 @@
 				11DD82452045471C002114B1 /* IFTContactInfoCell.xib in Resources */,
 				11AFB8FA2032910600DF0104 /* IFTContactCell.xib in Resources */,
 				11AFB8F5203290E000DF0104 /* IFTMyGroupCell.xib in Resources */,
+				11DD825220455F84002114B1 /* IFTContactInfoBottomControl.xib in Resources */,
 				11F3915320200E15005CDFFA /* Assets.xcassets in Resources */,
 				111672712042C2B300583E02 /* IFTCallRecordsCell.xib in Resources */,
 				11DD824D2045569A002114B1 /* ITFContactInfoHeadBgView.xib in Resources */,
@@ -1409,6 +1418,7 @@
 				11DD23A72041757A001210BD /* IFTContactListTableVC.m in Sources */,
 				113DE07120301AE1000705E9 /* IFTMineVC.m in Sources */,
 				118DF043202D388C00A309C7 /* UILabel+Addition.m in Sources */,
+				11DD825520456769002114B1 /* IFTContactInfoBottomControl.m in Sources */,
 				11DD239B204118EC001210BD /* IFTSearchBarView.m in Sources */,
 				118DF03F202D388C00A309C7 /* NSData+Addition.m in Sources */,
 				118DF025202D382100A309C7 /* DONG_AlertShowTool.m in Sources */,
