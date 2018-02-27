@@ -55,6 +55,13 @@
 		11DD823220452AE6002114B1 /* MLMSegmentScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD822720452AE6002114B1 /* MLMSegmentScroll.m */; };
 		11DD823320452AE6002114B1 /* UIView+EasyFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD822820452AE6002114B1 /* UIView+EasyFrame.m */; };
 		11DD82362045325A002114B1 /* IFTCallRecordsContainerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD82352045325A002114B1 /* IFTCallRecordsContainerCell.m */; };
+		11DD823B20454634002114B1 /* IFTContactDetailInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD823A20454634002114B1 /* IFTContactDetailInfoVC.m */; };
+		11DD823E2045468C002114B1 /* IFTContactInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD823D2045468C002114B1 /* IFTContactInfoModel.m */; };
+		11DD82442045471C002114B1 /* IFTContactInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD82422045471C002114B1 /* IFTContactInfoCell.m */; };
+		11DD82452045471C002114B1 /* IFTContactInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11DD82432045471C002114B1 /* IFTContactInfoCell.xib */; };
+		11DD8248204551A4002114B1 /* UIWindow+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD8247204551A4002114B1 /* UIWindow+Addition.m */; };
+		11DD824B2045568C002114B1 /* ITFContactInfoHeadBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD824A2045568C002114B1 /* ITFContactInfoHeadBgView.m */; };
+		11DD824D2045569A002114B1 /* ITFContactInfoHeadBgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11DD824C2045569A002114B1 /* ITFContactInfoHeadBgView.xib */; };
 		11F3914B20200E15005CDFFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3914A20200E15005CDFFA /* AppDelegate.m */; };
 		11F3914E20200E15005CDFFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3914D20200E15005CDFFA /* ViewController.m */; };
 		11F3915120200E15005CDFFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F3914F20200E15005CDFFA /* Main.storyboard */; };
@@ -368,6 +375,18 @@
 		11DD822E20452AE6002114B1 /* MLMSegmentScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMSegmentScroll.h; sourceTree = "<group>"; };
 		11DD82342045325A002114B1 /* IFTCallRecordsContainerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTCallRecordsContainerCell.h; sourceTree = "<group>"; };
 		11DD82352045325A002114B1 /* IFTCallRecordsContainerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTCallRecordsContainerCell.m; sourceTree = "<group>"; };
+		11DD823920454634002114B1 /* IFTContactDetailInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTContactDetailInfoVC.h; sourceTree = "<group>"; };
+		11DD823A20454634002114B1 /* IFTContactDetailInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTContactDetailInfoVC.m; sourceTree = "<group>"; };
+		11DD823C2045468C002114B1 /* IFTContactInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTContactInfoModel.h; sourceTree = "<group>"; };
+		11DD823D2045468C002114B1 /* IFTContactInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTContactInfoModel.m; sourceTree = "<group>"; };
+		11DD82412045471C002114B1 /* IFTContactInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTContactInfoCell.h; sourceTree = "<group>"; };
+		11DD82422045471C002114B1 /* IFTContactInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTContactInfoCell.m; sourceTree = "<group>"; };
+		11DD82432045471C002114B1 /* IFTContactInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTContactInfoCell.xib; sourceTree = "<group>"; };
+		11DD8246204551A4002114B1 /* UIWindow+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Addition.h"; sourceTree = "<group>"; };
+		11DD8247204551A4002114B1 /* UIWindow+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Addition.m"; sourceTree = "<group>"; };
+		11DD82492045568C002114B1 /* ITFContactInfoHeadBgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITFContactInfoHeadBgView.h; sourceTree = "<group>"; };
+		11DD824A2045568C002114B1 /* ITFContactInfoHeadBgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITFContactInfoHeadBgView.m; sourceTree = "<group>"; };
+		11DD824C2045569A002114B1 /* ITFContactInfoHeadBgView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITFContactInfoHeadBgView.xib; sourceTree = "<group>"; };
 		11F3914620200E15005CDFFA /* iFaceTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFaceTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F3914920200E15005CDFFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11F3914A20200E15005CDFFA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -551,11 +570,8 @@
 		113DE05D203019A0000705E9 /* Contact 联系人 */ = {
 			isa = PBXGroup;
 			children = (
-				113DE06320301A80000705E9 /* IFTContactVC.h */,
-				113DE06420301A80000705E9 /* IFTContactVC.m */,
-				11DD237820410DAB001210BD /* Model */,
-				111672672042B3BA00583E02 /* Cell */,
-				11AFB8D920328D8B00DF0104 /* View */,
+				11DD823720454597002114B1 /* MainBody */,
+				11DD8238204545BD002114B1 /* ContactDetailInfo */,
 			);
 			path = "Contact 联系人";
 			sourceTree = "<group>";
@@ -648,6 +664,8 @@
 				118DF037202D388A00A309C7 /* NSDictionary+Log.m */,
 				118DF028202D388600A309C7 /* NSString+Dong.h */,
 				118DF029202D388600A309C7 /* NSString+Dong.m */,
+				11DD8246204551A4002114B1 /* UIWindow+Addition.h */,
+				11DD8247204551A4002114B1 /* UIWindow+Addition.m */,
 				118DF02C202D388700A309C7 /* UIButton+Addition.h */,
 				118DF03C202D388C00A309C7 /* UIButton+Addition.m */,
 				118DF031202D388800A309C7 /* UIColor+Addition.h */,
@@ -764,6 +782,51 @@
 				11DD822E20452AE6002114B1 /* MLMSegmentScroll.h */,
 			);
 			path = MLMSegmentPageView;
+			sourceTree = "<group>";
+		};
+		11DD823720454597002114B1 /* MainBody */ = {
+			isa = PBXGroup;
+			children = (
+				113DE06320301A80000705E9 /* IFTContactVC.h */,
+				113DE06420301A80000705E9 /* IFTContactVC.m */,
+				11DD237820410DAB001210BD /* Model */,
+				111672672042B3BA00583E02 /* Cell */,
+				11AFB8D920328D8B00DF0104 /* View */,
+			);
+			path = MainBody;
+			sourceTree = "<group>";
+		};
+		11DD8238204545BD002114B1 /* ContactDetailInfo */ = {
+			isa = PBXGroup;
+			children = (
+				11DD823920454634002114B1 /* IFTContactDetailInfoVC.h */,
+				11DD823A20454634002114B1 /* IFTContactDetailInfoVC.m */,
+				11DD8240204546ED002114B1 /* View */,
+				11DD823F204546E6002114B1 /* Model */,
+			);
+			path = ContactDetailInfo;
+			sourceTree = "<group>";
+		};
+		11DD823F204546E6002114B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11DD823C2045468C002114B1 /* IFTContactInfoModel.h */,
+				11DD823D2045468C002114B1 /* IFTContactInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11DD8240204546ED002114B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11DD82412045471C002114B1 /* IFTContactInfoCell.h */,
+				11DD82422045471C002114B1 /* IFTContactInfoCell.m */,
+				11DD82432045471C002114B1 /* IFTContactInfoCell.xib */,
+				11DD82492045568C002114B1 /* ITFContactInfoHeadBgView.h */,
+				11DD824A2045568C002114B1 /* ITFContactInfoHeadBgView.m */,
+				11DD824C2045569A002114B1 /* ITFContactInfoHeadBgView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		11F3913D20200E15005CDFFA = {
@@ -1179,10 +1242,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F3915620200E15005CDFFA /* LaunchScreen.storyboard in Resources */,
+				11DD82452045471C002114B1 /* IFTContactInfoCell.xib in Resources */,
 				11AFB8FA2032910600DF0104 /* IFTContactCell.xib in Resources */,
 				11AFB8F5203290E000DF0104 /* IFTMyGroupCell.xib in Resources */,
 				11F3915320200E15005CDFFA /* Assets.xcassets in Resources */,
 				111672712042C2B300583E02 /* IFTCallRecordsCell.xib in Resources */,
+				11DD824D2045569A002114B1 /* ITFContactInfoHeadBgView.xib in Resources */,
 				11F3915120200E15005CDFFA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1332,12 +1397,15 @@
 				118DF094202D89B600A309C7 /* CustomerTextField.m in Sources */,
 				11F3914E20200E15005CDFFA /* ViewController.m in Sources */,
 				11AFB8F92032910600DF0104 /* IFTContactCell.m in Sources */,
+				11DD823B20454634002114B1 /* IFTContactDetailInfoVC.m in Sources */,
 				118DF040202D388C00A309C7 /* NSDate+Addition.m in Sources */,
 				118DF047202D388C00A309C7 /* UIButton+Addition.m in Sources */,
 				118DF087202D511000A309C7 /* IFTBaseNavigationController.m in Sources */,
 				113DE06E20301ACD000705E9 /* IFTMessageVC.m in Sources */,
 				11F3915920200E15005CDFFA /* main.m in Sources */,
 				113DE06820301A9B000705E9 /* IFTCallRecordsVC.m in Sources */,
+				11DD824B2045568C002114B1 /* ITFContactInfoHeadBgView.m in Sources */,
+				11DD82442045471C002114B1 /* IFTContactInfoCell.m in Sources */,
 				11DD23A72041757A001210BD /* IFTContactListTableVC.m in Sources */,
 				113DE07120301AE1000705E9 /* IFTMineVC.m in Sources */,
 				118DF043202D388C00A309C7 /* UILabel+Addition.m in Sources */,
@@ -1352,6 +1420,7 @@
 				118DF042202D388C00A309C7 /* UIImageView+Addition.m in Sources */,
 				118DF046202D388C00A309C7 /* UIView+Addition.m in Sources */,
 				113DE06B20301AB4000705E9 /* IFTScanCodeVC.m in Sources */,
+				11DD823E2045468C002114B1 /* IFTContactInfoModel.m in Sources */,
 				11DD239220410E0F001210BD /* IFTSection1Model.m in Sources */,
 				11DD239520410E6D001210BD /* IFTContactModel.m in Sources */,
 				11F3914B20200E15005CDFFA /* AppDelegate.m in Sources */,
@@ -1359,6 +1428,7 @@
 				118DF01F202D37FD00A309C7 /* FileManageCommon.m in Sources */,
 				1116724F204295D600583E02 /* IFTBaseTableView.m in Sources */,
 				11DD23982041145B001210BD /* IFTContainerCell.m in Sources */,
+				11DD8248204551A4002114B1 /* UIWindow+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

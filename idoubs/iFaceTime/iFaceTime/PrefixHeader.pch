@@ -26,5 +26,6 @@
 #import "DONG_AlertShowTool.h"
 #import "NSString+Dong.h"
 #import "UILabel+Addition.h"
+#import "UIWindow+Addition.h"
 
 #endif /* PrefixHeader_pch */

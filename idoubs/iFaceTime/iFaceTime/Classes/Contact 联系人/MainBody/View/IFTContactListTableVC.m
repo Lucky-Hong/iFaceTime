@@ -18,6 +18,7 @@
 
 #import "IFTContactListTableVC.h"
 #import "IFTContactCell.h"
+#import "IFTContactDetailInfoVC.h"
 
 @interface IFTContactListTableVC () <UIGestureRecognizerDelegate>
 
@@ -65,7 +66,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DONG_Log(@"===============");
+    IFTContactDetailInfoVC *contactInfoVC = [[IFTContactDetailInfoVC alloc] init];
+    [[UIWindow currentViewController].navigationController pushViewController:contactInfoVC animated:YES];
     
 }
 

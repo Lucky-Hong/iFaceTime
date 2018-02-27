@@ -74,8 +74,8 @@
 
 - (IFTBaseTableView *)tableView {
     if (!_tableView) {
-        //float height = CYL_IS_IPHONE_X ? kMainScreenHeight-64-65:kMainScreenHeight-64-49;
-        _tableView = [[IFTBaseTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        float height = CYL_IS_IPHONE_X ? kMainScreenHeight-64-65:kMainScreenHeight-64-49;
+        _tableView = [[IFTBaseTableView alloc] initWithFrame:CGRectMake(0, 64, kMainScreenWidth, height) style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.estimatedRowHeight = 44;
@@ -160,7 +160,7 @@
 #pragma mark - ScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat bottomCellOffset = [_tableView rectForSection:0].origin.y - 64;
+    CGFloat bottomCellOffset = [_tableView rectForSection:0].origin.y;
     
     if (scrollView.contentOffset.y >= bottomCellOffset) {
         scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
