@@ -8,11 +8,24 @@
 
 #import "IFTMineCellOne.h"
 
+@interface IFTMineCellOne()
+
+
+@property (weak, nonatomic) IBOutlet UISwitch *jfkdsajfkl;
+
+
+@end
+
 @implementation IFTMineCellOne
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    _jfkdsajfkl.transform = CGAffineTransformMakeScale( 0.8, 0.8); // 缩放
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -29,5 +42,7 @@
     
     return cell;
 }
+
+
 
 @end

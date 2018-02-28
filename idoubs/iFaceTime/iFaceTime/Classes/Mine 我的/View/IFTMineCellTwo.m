@@ -8,6 +8,11 @@
 
 #import "IFTMineCellTwo.h"
 
+
+@interface IFTMineCellTwo()
+
+@end
+
 @implementation IFTMineCellTwo
 
 - (void)awakeFromNib {
