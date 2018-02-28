@@ -13,6 +13,12 @@
 		111672712042C2B300583E02 /* IFTCallRecordsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1116726F2042C2B300583E02 /* IFTCallRecordsCell.xib */; };
 		11284320202C41D600E512AC /* IFTLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1128431F202C41D600E512AC /* IFTLoginVC.m */; };
 		1128433B202C549C00E512AC /* IFTRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1128433A202C549C00E512AC /* IFTRegisterVC.m */; };
+		11303DB120465E340092E62A /* IFTMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303DB020465E340092E62A /* IFTMineHeaderView.m */; };
+		11303DB320465E420092E62A /* IFTMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303DB220465E420092E62A /* IFTMineHeaderView.xib */; };
+		11303DB7204679600092E62A /* IFTMineCellOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303DB5204679600092E62A /* IFTMineCellOne.m */; };
+		11303DB8204679600092E62A /* IFTMineCellOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303DB6204679600092E62A /* IFTMineCellOne.xib */; };
+		11303DBC204679760092E62A /* IFTMineCellTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303DBA204679760092E62A /* IFTMineCellTwo.m */; };
+		11303DBD204679760092E62A /* IFTMineCellTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303DBB204679760092E62A /* IFTMineCellTwo.xib */; };
 		113DE06520301A80000705E9 /* IFTContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 113DE06420301A80000705E9 /* IFTContactVC.m */; };
 		113DE06820301A9B000705E9 /* IFTCallRecordsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 113DE06720301A9B000705E9 /* IFTCallRecordsVC.m */; };
 		113DE06B20301AB4000705E9 /* IFTScanCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 113DE06A20301AB4000705E9 /* IFTScanCodeVC.m */; };
@@ -288,6 +294,15 @@
 		1128431F202C41D600E512AC /* IFTLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTLoginVC.m; sourceTree = "<group>"; };
 		11284339202C549C00E512AC /* IFTRegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTRegisterVC.h; sourceTree = "<group>"; };
 		1128433A202C549C00E512AC /* IFTRegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTRegisterVC.m; sourceTree = "<group>"; };
+		11303DAF20465E340092E62A /* IFTMineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTMineHeaderView.h; sourceTree = "<group>"; };
+		11303DB020465E340092E62A /* IFTMineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTMineHeaderView.m; sourceTree = "<group>"; };
+		11303DB220465E420092E62A /* IFTMineHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTMineHeaderView.xib; sourceTree = "<group>"; };
+		11303DB4204679600092E62A /* IFTMineCellOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTMineCellOne.h; sourceTree = "<group>"; };
+		11303DB5204679600092E62A /* IFTMineCellOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTMineCellOne.m; sourceTree = "<group>"; };
+		11303DB6204679600092E62A /* IFTMineCellOne.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTMineCellOne.xib; sourceTree = "<group>"; };
+		11303DB9204679760092E62A /* IFTMineCellTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTMineCellTwo.h; sourceTree = "<group>"; };
+		11303DBA204679760092E62A /* IFTMineCellTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTMineCellTwo.m; sourceTree = "<group>"; };
+		11303DBB204679760092E62A /* IFTMineCellTwo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTMineCellTwo.xib; sourceTree = "<group>"; };
 		113DE06320301A80000705E9 /* IFTContactVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTContactVC.h; sourceTree = "<group>"; };
 		113DE06420301A80000705E9 /* IFTContactVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTContactVC.m; sourceTree = "<group>"; };
 		113DE06620301A9B000705E9 /* IFTCallRecordsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTCallRecordsVC.h; sourceTree = "<group>"; };
@@ -546,6 +561,22 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		11303D9720465E100092E62A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11303DAF20465E340092E62A /* IFTMineHeaderView.h */,
+				11303DB020465E340092E62A /* IFTMineHeaderView.m */,
+				11303DB220465E420092E62A /* IFTMineHeaderView.xib */,
+				11303DB4204679600092E62A /* IFTMineCellOne.h */,
+				11303DB5204679600092E62A /* IFTMineCellOne.m */,
+				11303DB6204679600092E62A /* IFTMineCellOne.xib */,
+				11303DB9204679760092E62A /* IFTMineCellTwo.h */,
+				11303DBA204679760092E62A /* IFTMineCellTwo.m */,
+				11303DBB204679760092E62A /* IFTMineCellTwo.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		113DE04320301952000705E9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +590,7 @@
 			children = (
 				113DE06F20301AE1000705E9 /* IFTMineVC.h */,
 				113DE07020301AE1000705E9 /* IFTMineVC.m */,
+				11303D9720465E100092E62A /* View */,
 			);
 			path = "Mine 我的";
 			sourceTree = "<group>";
@@ -1250,9 +1282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F3915620200E15005CDFFA /* LaunchScreen.storyboard in Resources */,
+				11303DBD204679760092E62A /* IFTMineCellTwo.xib in Resources */,
+				11303DB8204679600092E62A /* IFTMineCellOne.xib in Resources */,
 				11DD82452045471C002114B1 /* IFTContactInfoCell.xib in Resources */,
 				11AFB8FA2032910600DF0104 /* IFTContactCell.xib in Resources */,
 				11AFB8F5203290E000DF0104 /* IFTMyGroupCell.xib in Resources */,
+				11303DB320465E420092E62A /* IFTMineHeaderView.xib in Resources */,
 				11DD825220455F84002114B1 /* IFTContactInfoBottomControl.xib in Resources */,
 				11F3915320200E15005CDFFA /* Assets.xcassets in Resources */,
 				111672712042C2B300583E02 /* IFTCallRecordsCell.xib in Resources */,
@@ -1395,6 +1430,7 @@
 				118DF045202D388C00A309C7 /* NSDictionary+Log.m in Sources */,
 				111672702042C2B300583E02 /* IFTCallRecordsCell.m in Sources */,
 				11DD23A120416856001210BD /* IFTSlideHeaderLabel.m in Sources */,
+				11303DB120465E340092E62A /* IFTMineHeaderView.m in Sources */,
 				118DF024202D382100A309C7 /* DONG_CacheClearTool.m in Sources */,
 				113DE07420302D8B000705E9 /* IFTPulsButton.m in Sources */,
 				11DD82362045325A002114B1 /* IFTCallRecordsContainerCell.m in Sources */,
@@ -1413,10 +1449,12 @@
 				113DE06E20301ACD000705E9 /* IFTMessageVC.m in Sources */,
 				11F3915920200E15005CDFFA /* main.m in Sources */,
 				113DE06820301A9B000705E9 /* IFTCallRecordsVC.m in Sources */,
+				11303DBC204679760092E62A /* IFTMineCellTwo.m in Sources */,
 				11DD824B2045568C002114B1 /* ITFContactInfoHeadBgView.m in Sources */,
 				11DD82442045471C002114B1 /* IFTContactInfoCell.m in Sources */,
 				11DD23A72041757A001210BD /* IFTContactListTableVC.m in Sources */,
 				113DE07120301AE1000705E9 /* IFTMineVC.m in Sources */,
+				11303DB7204679600092E62A /* IFTMineCellOne.m in Sources */,
 				118DF043202D388C00A309C7 /* UILabel+Addition.m in Sources */,
 				11DD825520456769002114B1 /* IFTContactInfoBottomControl.m in Sources */,
 				11DD239B204118EC001210BD /* IFTSearchBarView.m in Sources */,

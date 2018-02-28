@@ -18,6 +18,7 @@
 #define kApplecationScreenHeight [[UIScreen mainScreen] applicationFrame].size.height
 
 
+
 // 3.5寸屏幕
 #define ThreePointFiveInch ([UIScreen mainScreen].bounds.size.height == 480.0)
 // 4.0寸屏幕
@@ -27,6 +28,7 @@
 // 5.5寸屏幕
 #define FivePointFiveSevenInch ([UIScreen mainScreen].bounds.size.height == 736.0)
 
+#define IPHONE_X (iOS11 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && (MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) == 375 && MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) == 812))
 #define iPhone6P ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242.0f, 2208.0f), [[UIScreen mainScreen] currentMode].size) : NO)
 #define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750.0f, 1334.0f), [[UIScreen mainScreen] currentMode].size) : NO)
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640.0f, 1136.0f), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -43,7 +45,11 @@
 // iOS8系统
 #define iOS8 ([UIDevice currentDevice].systemVersion.doubleValue >= 8.0  && [UIDevice currentDevice].systemVersion.doubleValue < 9.0)
 // iOS9系统
-#define iOS9 ([UIDevice currentDevice].systemVersion.doubleValue >= 9.0)
+#define iOS9 ([UIDevice currentDevice].systemVersion.doubleValue >= 9.0 && [UIDevice currentDevice].systemVersion.doubleValue < 10.0)
+// iOS10系统
+#define iOS10 ([UIDevice currentDevice].systemVersion.doubleValue >= 10.0 && [UIDevice currentDevice].systemVersion.doubleValue < 11.0)
+// iOS11系统
+#define iOS11 [UIDevice currentDevice].systemVersion.doubleValue >= 11.0
 
 // storyboard实例化
 #define DONG_STORYBOARD(storyboardName)          [UIStoryboard storyboardWithName:storyboardName bundle:nil]

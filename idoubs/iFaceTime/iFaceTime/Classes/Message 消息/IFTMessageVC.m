@@ -18,7 +18,7 @@
 
 #import "IFTMessageVC.h"
 
-@interface IFTMessageVC ()
+@interface IFTMessageVC () 
 
 @end
 
@@ -28,7 +28,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.navigationItem.title = @"消息";
-     [self.navigationController.tabBarItem setBadgeValue:@"3"];
+//     [self.navigationController.tabBarItem setBadgeValue:@"3"];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

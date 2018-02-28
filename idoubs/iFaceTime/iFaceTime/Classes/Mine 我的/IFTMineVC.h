@@ -20,4 +20,7 @@
 
 @interface IFTMineVC : UIViewController
 
+
+
+
 @end
