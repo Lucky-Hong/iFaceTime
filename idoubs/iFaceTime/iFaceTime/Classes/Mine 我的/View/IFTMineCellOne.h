@@ -10,6 +10,7 @@
 
 @interface IFTMineCellOne : UITableViewCell
 
-+ (instancetype)cellWithTableView:(UITableView *)tableView;
++ (nonnull instancetype)cellWithTableView:(nonnull UITableView *)tableView;
+- (void)setModel:(nullable id)model index:(nullable NSIndexPath *)indexPath;
 
 @end

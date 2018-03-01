@@ -20,11 +20,12 @@
 #import "IFTMineHeaderView.h"
 #import "IFTMineCellTwo.h"
 #import "IFTMineCellOne.h"
-
+#import "IFTContactDetailInfoVC.h"
 
 @interface IFTMineVC () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIButton *signOutButton;
 
 @end
 
@@ -35,7 +36,7 @@
     self.view.backgroundColor = [UIColor colorWithHex:@"#F0F0F6"];
     self.navigationItem.title = @"我的";
     
-    [self.view addSubview:self.tableView];
+    [self setUpSubViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +46,26 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+- (void)setUpSubViews {
+    [self.view addSubview:self.tableView];
+    
+    UIButton *signOutButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [signOutButton setTitle:@"退出登录" forState:UIControlStateNormal];
+    [signOutButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    signOutButton.titleLabel.font = [UIFont systemFontOfSize:16.f];
+    signOutButton.titleLabel.textColor = [UIColor whiteColor];
+    [signOutButton setBackgroundImage:[UIImage imageNamed:@"SignOutButtonBg"] forState:UIControlStateNormal];
+    _signOutButton = signOutButton;
+    [self.view addSubview:signOutButton];
+    [signOutButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(25);
+        make.right.equalTo(self.view.mas_right).offset(-25);
+        make.top.equalTo(self.tableView.mas_bottom).offset(66);
+        make.height.equalTo(@45);
+        make.centerX.equalTo(self.view);
+    }];
 }
 
 #pragma mark - Getter
@@ -58,7 +79,6 @@
         _tableView.scrollEnabled = NO;
         _tableView.estimatedRowHeight = 44;
         _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         // tableHeaderView
         IFTMineHeaderView *headView = [[NSBundle mainBundle] loadNibNamed:@"IFTMineHeaderView" owner:nil options:nil][0];
@@ -85,9 +105,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         IFTMineCellOne *cell = [IFTMineCellOne cellWithTableView:tableView];
+        [cell setModel:nil index:indexPath];
         return cell;
     } else {
        IFTMineCellTwo *cell = [IFTMineCellTwo cellWithTableView:tableView];
+        [cell setModel:nil index:indexPath];
         return cell;
     }
     
@@ -96,13 +118,11 @@
 #pragma mark -  UITableViewDataDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return 55;
-    }
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        return 60;
+    } else {
         return 50;
     }
-    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -122,9 +142,25 @@
 }
 
 - (IBAction)viewContactDetailInfo:(id)sender {
-    
-    DONG_Log(@"查看详情");
+    IFTContactDetailInfoVC *contactInfoVC = [[IFTContactDetailInfoVC alloc] init];
+    [self.navigationController pushViewController:contactInfoVC animated:YES];
 }
 
+- (IBAction)changeFeatureSwitchStatus:(id)sender {
+    UISwitch *featureSwitch = sender;
+    if (featureSwitch.isOn ) {
+        if (featureSwitch.tag == 0) {
+            DONG_Log(@"打开陌生人勿扰");
+        } else {
+            DONG_Log(@"打开家庭云账户");
+        }
+    } else {
+        if (featureSwitch.tag == 0) {
+            DONG_Log(@"关闭陌生人勿扰");
+        } else {
+            DONG_Log(@"关闭家庭云账户");
+        }
+    }
+}
 
 @end

@@ -11,6 +11,9 @@
 
 @interface IFTMineCellTwo()
 
+@property (weak, nonatomic) IBOutlet UIImageView *leftIV;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 @end
 
 @implementation IFTMineCellTwo
@@ -33,6 +36,19 @@
     //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
+}
+
+- (void)setModel:(nullable id)model index:(nullable NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        [_leftIV setImage:[UIImage imageNamed:@"About"]];
+        _titleLabel.text = @"关于我们";
+    } else if (indexPath.row == 1) {
+        [_leftIV setImage:[UIImage imageNamed:@"Update"]];
+        _titleLabel.text = @"检查更新";
+    } else {
+        [_leftIV setImage:[UIImage imageNamed:@"Share"]];
+        _titleLabel.text = @"分享亲情通话";
+    }
 }
 
 @end

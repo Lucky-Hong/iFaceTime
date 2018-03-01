@@ -10,9 +10,11 @@
 
 @interface IFTMineCellOne()
 
+@property (weak, nonatomic) IBOutlet UIImageView *leftIV;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *promptLabel;
 
-@property (weak, nonatomic) IBOutlet UISwitch *jfkdsajfkl;
-
+@property (weak, nonatomic) IBOutlet UISwitch *featureSwitch;
 
 @end
 
@@ -25,7 +27,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _jfkdsajfkl.transform = CGAffineTransformMakeScale( 0.8, 0.8); // 缩放
+    _featureSwitch.transform = CGAffineTransformMakeScale( 0.8, 0.8); // 缩放
+    _featureSwitch.onTintColor = [UIColor colorWithHex:@"#00AEFF"];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -38,11 +41,32 @@
     static NSString *ID = @"IFTMineCellOne";
     IFTMineCellOne *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) cell = [[NSBundle mainBundle] loadNibNamed:ID owner:nil options:nil][0];
-    //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
+- (void)setModel:(nullable id)model index:(nullable NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        _promptLabel.hidden = YES;
+        [_leftIV setImage:[UIImage imageNamed:@"NoDistrub"]];
+        _titleLabel.text = @"陌生人勿扰";
+    } else {
+        _promptLabel.hidden = NO;
+        [_leftIV setImage:[UIImage imageNamed:@"FamilyCloud"]];
+        _titleLabel.text = @"家庭云账户";
+    }
+    _featureSwitch.tag = indexPath.row;
+}
+
+- (IBAction)changeSwitchStatus:(id)sender {
+    UISwitch *featureSwitch = sender;
+    if (featureSwitch.isOn && featureSwitch.tag == 1) {
+        _promptLabel.hidden = NO;
+    } else {
+        _promptLabel.hidden = YES;
+    }
+}
 
 
 @end
