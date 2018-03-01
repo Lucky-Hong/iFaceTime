@@ -53,10 +53,10 @@
     
     UIButton *signOutButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [signOutButton setTitle:@"退出登录" forState:UIControlStateNormal];
-    [signOutButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [signOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     signOutButton.titleLabel.font = [UIFont systemFontOfSize:16.f];
-    signOutButton.titleLabel.textColor = [UIColor whiteColor];
     [signOutButton setBackgroundImage:[UIImage imageNamed:@"SignOutButtonBg"] forState:UIControlStateNormal];
+    [signOutButton addTarget:self action:@selector(signOut) forControlEvents:UIControlEventTouchUpInside];
     _signOutButton = signOutButton;
     [self.view addSubview:signOutButton];
     [signOutButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -161,6 +161,10 @@
             DONG_Log(@"关闭家庭云账户");
         }
     }
+}
+
+- (void)signOut {
+    DONG_Log(@"退出登录");
 }
 
 @end
