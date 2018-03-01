@@ -11,6 +11,13 @@
 		1116726B2042BCB400583E02 /* IFTCallRecordsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116726A2042BCB400583E02 /* IFTCallRecordsTableVC.m */; };
 		111672702042C2B300583E02 /* IFTCallRecordsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116726E2042C2B300583E02 /* IFTCallRecordsCell.m */; };
 		111672712042C2B300583E02 /* IFTCallRecordsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1116726F2042C2B300583E02 /* IFTCallRecordsCell.xib */; };
+		1127487F2047D3A000821DFF /* IFTMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1127487D2047D3A000821DFF /* IFTMessageCell.m */; };
+		112748802047D3A000821DFF /* IFTMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1127487E2047D3A000821DFF /* IFTMessageCell.xib */; };
+		112748832047D68500821DFF /* IFTMessageSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 112748822047D68500821DFF /* IFTMessageSectionHeaderView.m */; };
+		112748852047D69000821DFF /* IFTMessageSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 112748842047D69000821DFF /* IFTMessageSectionHeaderView.xib */; };
+		112748A12048053800821DFF /* IFTAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 112748A02048053800821DFF /* IFTAboutVC.m */; };
+		112748A620480C8F00821DFF /* IFTAboutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 112748A420480C8F00821DFF /* IFTAboutCell.m */; };
+		112748A720480C8F00821DFF /* IFTAboutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 112748A520480C8F00821DFF /* IFTAboutCell.xib */; };
 		11284320202C41D600E512AC /* IFTLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1128431F202C41D600E512AC /* IFTLoginVC.m */; };
 		1128433B202C549C00E512AC /* IFTRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1128433A202C549C00E512AC /* IFTRegisterVC.m */; };
 		11303DB120465E340092E62A /* IFTMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303DB020465E340092E62A /* IFTMineHeaderView.m */; };
@@ -290,6 +297,17 @@
 		1116726D2042C2B300583E02 /* IFTCallRecordsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTCallRecordsCell.h; sourceTree = "<group>"; };
 		1116726E2042C2B300583E02 /* IFTCallRecordsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTCallRecordsCell.m; sourceTree = "<group>"; };
 		1116726F2042C2B300583E02 /* IFTCallRecordsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTCallRecordsCell.xib; sourceTree = "<group>"; };
+		1127487C2047D3A000821DFF /* IFTMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTMessageCell.h; sourceTree = "<group>"; };
+		1127487D2047D3A000821DFF /* IFTMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTMessageCell.m; sourceTree = "<group>"; };
+		1127487E2047D3A000821DFF /* IFTMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTMessageCell.xib; sourceTree = "<group>"; };
+		112748812047D68500821DFF /* IFTMessageSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTMessageSectionHeaderView.h; sourceTree = "<group>"; };
+		112748822047D68500821DFF /* IFTMessageSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTMessageSectionHeaderView.m; sourceTree = "<group>"; };
+		112748842047D69000821DFF /* IFTMessageSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTMessageSectionHeaderView.xib; sourceTree = "<group>"; };
+		1127489F2048053800821DFF /* IFTAboutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTAboutVC.h; sourceTree = "<group>"; };
+		112748A02048053800821DFF /* IFTAboutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTAboutVC.m; sourceTree = "<group>"; };
+		112748A320480C8F00821DFF /* IFTAboutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTAboutCell.h; sourceTree = "<group>"; };
+		112748A420480C8F00821DFF /* IFTAboutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTAboutCell.m; sourceTree = "<group>"; };
+		112748A520480C8F00821DFF /* IFTAboutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTAboutCell.xib; sourceTree = "<group>"; };
 		1128431E202C41D600E512AC /* IFTLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTLoginVC.h; sourceTree = "<group>"; };
 		1128431F202C41D600E512AC /* IFTLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTLoginVC.m; sourceTree = "<group>"; };
 		11284339202C549C00E512AC /* IFTRegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTRegisterVC.h; sourceTree = "<group>"; };
@@ -552,6 +570,39 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		112748642047D37E00821DFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1127487C2047D3A000821DFF /* IFTMessageCell.h */,
+				1127487D2047D3A000821DFF /* IFTMessageCell.m */,
+				1127487E2047D3A000821DFF /* IFTMessageCell.xib */,
+				112748812047D68500821DFF /* IFTMessageSectionHeaderView.h */,
+				112748822047D68500821DFF /* IFTMessageSectionHeaderView.m */,
+				112748842047D69000821DFF /* IFTMessageSectionHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11274887204804FF00821DFF /* About */ = {
+			isa = PBXGroup;
+			children = (
+				1127489F2048053800821DFF /* IFTAboutVC.h */,
+				112748A02048053800821DFF /* IFTAboutVC.m */,
+				112748A220480C6F00821DFF /* View */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		112748A220480C6F00821DFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				112748A320480C8F00821DFF /* IFTAboutCell.h */,
+				112748A420480C8F00821DFF /* IFTAboutCell.m */,
+				112748A520480C8F00821DFF /* IFTAboutCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		11284338202C4D3400E512AC /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,6 +642,7 @@
 				113DE06F20301AE1000705E9 /* IFTMineVC.h */,
 				113DE07020301AE1000705E9 /* IFTMineVC.m */,
 				11303D9720465E100092E62A /* View */,
+				11274887204804FF00821DFF /* About */,
 			);
 			path = "Mine 我的";
 			sourceTree = "<group>";
@@ -600,6 +652,7 @@
 			children = (
 				113DE06C20301ACD000705E9 /* IFTMessageVC.h */,
 				113DE06D20301ACD000705E9 /* IFTMessageVC.m */,
+				112748642047D37E00821DFF /* View */,
 			);
 			path = "Message 消息";
 			sourceTree = "<group>";
@@ -1281,14 +1334,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112748A720480C8F00821DFF /* IFTAboutCell.xib in Resources */,
 				11F3915620200E15005CDFFA /* LaunchScreen.storyboard in Resources */,
 				11303DBD204679760092E62A /* IFTMineCellTwo.xib in Resources */,
 				11303DB8204679600092E62A /* IFTMineCellOne.xib in Resources */,
 				11DD82452045471C002114B1 /* IFTContactInfoCell.xib in Resources */,
 				11AFB8FA2032910600DF0104 /* IFTContactCell.xib in Resources */,
+				112748802047D3A000821DFF /* IFTMessageCell.xib in Resources */,
 				11AFB8F5203290E000DF0104 /* IFTMyGroupCell.xib in Resources */,
 				11303DB320465E420092E62A /* IFTMineHeaderView.xib in Resources */,
 				11DD825220455F84002114B1 /* IFTContactInfoBottomControl.xib in Resources */,
+				112748852047D69000821DFF /* IFTMessageSectionHeaderView.xib in Resources */,
 				11F3915320200E15005CDFFA /* Assets.xcassets in Resources */,
 				111672712042C2B300583E02 /* IFTCallRecordsCell.xib in Resources */,
 				11DD824D2045569A002114B1 /* ITFContactInfoHeadBgView.xib in Resources */,
@@ -1439,6 +1495,7 @@
 				118DF03D202D388C00A309C7 /* NSDictionary+Addition.m in Sources */,
 				118DF044202D388C00A309C7 /* UIImage+Addition.m in Sources */,
 				118DF08D202D7B3600A309C7 /* UIViewController+BackButtonHandler.m in Sources */,
+				112748A620480C8F00821DFF /* IFTAboutCell.m in Sources */,
 				118DF094202D89B600A309C7 /* CustomerTextField.m in Sources */,
 				11F3914E20200E15005CDFFA /* ViewController.m in Sources */,
 				11AFB8F92032910600DF0104 /* IFTContactCell.m in Sources */,
@@ -1452,6 +1509,7 @@
 				11303DBC204679760092E62A /* IFTMineCellTwo.m in Sources */,
 				11DD824B2045568C002114B1 /* ITFContactInfoHeadBgView.m in Sources */,
 				11DD82442045471C002114B1 /* IFTContactInfoCell.m in Sources */,
+				112748832047D68500821DFF /* IFTMessageSectionHeaderView.m in Sources */,
 				11DD23A72041757A001210BD /* IFTContactListTableVC.m in Sources */,
 				113DE07120301AE1000705E9 /* IFTMineVC.m in Sources */,
 				11303DB7204679600092E62A /* IFTMineCellOne.m in Sources */,
@@ -1471,7 +1529,9 @@
 				11DD823E2045468C002114B1 /* IFTContactInfoModel.m in Sources */,
 				11DD239220410E0F001210BD /* IFTSection1Model.m in Sources */,
 				11DD239520410E6D001210BD /* IFTContactModel.m in Sources */,
+				1127487F2047D3A000821DFF /* IFTMessageCell.m in Sources */,
 				11F3914B20200E15005CDFFA /* AppDelegate.m in Sources */,
+				112748A12048053800821DFF /* IFTAboutVC.m in Sources */,
 				118DF041202D388C00A309C7 /* UIColor+Addition.m in Sources */,
 				118DF01F202D37FD00A309C7 /* FileManageCommon.m in Sources */,
 				1116724F204295D600583E02 /* IFTBaseTableView.m in Sources */,

@@ -217,6 +217,46 @@
             </objects>
             <point key="canvasLocation" x="1434" y="99"/>
         </scene>
+        <!--AboutVC-->
+        <scene sceneID="ozt-kv-3U8">
+            <objects>
+                <viewController storyboardIdentifier="IFTAboutVC" id="0KG-rT-tqf" customClass="IFTAboutVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uW3-8c-87n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="quD-LM-LuY">
+                                <rect key="frame" x="149" y="84" width="77" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="JUq-AG-JqY"/>
+                                    <constraint firstAttribute="width" constant="77" id="SXS-n3-QRY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="亲情通话V1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1J-rw-ylC">
+                                <rect key="frame" x="127.5" y="172" width="120" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Ejj-MD-f8Q"/>
+                                    <constraint firstAttribute="height" constant="22" id="hL4-ad-BGH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.24313725490196078" green="0.24313725490196078" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J1J-rw-ylC" firstAttribute="top" secondItem="quD-LM-LuY" secondAttribute="bottom" constant="15" id="Pza-K5-Zrj"/>
+                            <constraint firstItem="quD-LM-LuY" firstAttribute="centerX" secondItem="uW3-8c-87n" secondAttribute="centerX" id="Tx2-tN-KsX"/>
+                            <constraint firstItem="quD-LM-LuY" firstAttribute="top" secondItem="eki-z5-H9U" secondAttribute="top" constant="64" id="jFa-UE-F49"/>
+                            <constraint firstItem="J1J-rw-ylC" firstAttribute="centerX" secondItem="quD-LM-LuY" secondAttribute="centerX" id="yQK-1n-g6b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eki-z5-H9U"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5OH-Vn-Yzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2087.1999999999998" y="93.103448275862078"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Bottom_BG_Img" width="375" height="78"/>

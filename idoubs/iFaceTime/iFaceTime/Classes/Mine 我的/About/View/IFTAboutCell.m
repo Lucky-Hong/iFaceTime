@@ -1,22 +1,20 @@
 //
-//  IFTMineCellTwo.m
+//  IFTAboutCell.m
 //  iFaceTime
 //
-//  Created by yesdgq on 2018/2/28.
+//  Created by yesdgq on 2018/3/1.
 //  Copyright © 2018年 yesdgq. All rights reserved.
 //
 
-#import "IFTMineCellTwo.h"
+#import "IFTAboutCell.h"
 
+@interface IFTAboutCell()
 
-@interface IFTMineCellTwo()
-
-@property (weak, nonatomic) IBOutlet UIImageView *leftIV;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
-@implementation IFTMineCellTwo
+@implementation IFTAboutCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -30,8 +28,8 @@
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
-    static NSString *ID = @"IFTMineCellTwo";
-    IFTMineCellTwo *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    static NSString *ID = @"IFTAboutCell";
+    IFTAboutCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) cell = [[NSBundle mainBundle] loadNibNamed:ID owner:nil options:nil][0];
     //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -40,15 +38,15 @@
 
 - (void)setModel:(nullable id)model index:(nullable NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        [_leftIV setImage:[UIImage imageNamed:@"About"]];
-        _titleLabel.text = @"关于我们";
+        self.titleLabel.text = @"功能介绍";
     } else if (indexPath.row == 1) {
-        [_leftIV setImage:[UIImage imageNamed:@"Update"]];
-        _titleLabel.text = @"检查更新";
-    } else {
-        [_leftIV setImage:[UIImage imageNamed:@"Share_Mine"]];
-        _titleLabel.text = @"分享亲情通话";
+        self.titleLabel.text = @"服务协议";
+    } else if (indexPath.row == 2) {
+        self.titleLabel.text = @"隐私政策";
+    } else if (indexPath.row == 3) {
+        self.titleLabel.text = @"版本信息";
     }
+    
 }
 
 @end

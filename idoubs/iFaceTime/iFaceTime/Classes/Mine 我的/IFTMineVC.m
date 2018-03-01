@@ -21,6 +21,7 @@
 #import "IFTMineCellTwo.h"
 #import "IFTMineCellOne.h"
 #import "IFTContactDetailInfoVC.h"
+#import "IFTAboutVC.h"
 
 @interface IFTMineVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -72,12 +73,11 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        float height = IPHONE_X ? kMainScreenHeight-64-65-169:kMainScreenHeight-64-49-169;
+        float height = IPHONE_X ? kMainScreenHeight-64-65-169+5:kMainScreenHeight-64-49-169+5;
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kMainScreenWidth, height) style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.scrollEnabled = NO;
-        _tableView.estimatedRowHeight = 44;
         _tableView.rowHeight = UITableViewAutomaticDimension;
         
         // tableHeaderView
@@ -137,8 +137,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES]; // 取消选中
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        IFTAboutVC *aboutVC = DONG_INSTANT_VC_WITH_ID(@"Main", @"IFTAboutVC");
+        [self.navigationController pushViewController:aboutVC animated:YES];
+    } else if (indexPath.section == 1 && indexPath.row == 1) {
+        
+    } else if (indexPath.section == 1 && indexPath.row == 2) {
+        
+    }
 }
 
 - (IBAction)viewContactDetailInfo:(id)sender {
