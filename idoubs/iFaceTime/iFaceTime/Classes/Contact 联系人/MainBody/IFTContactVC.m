@@ -24,6 +24,7 @@
 #import "IFTContainerCell.h"
 #import "IFTSearchBarView.h"
 #import "IFTBaseTableView.h"
+#import "IFTAddContactVC.h"
 
 @interface IFTContactVC () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
@@ -129,8 +130,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    IFTAddContactVC *addContactVC = [[IFTAddContactVC alloc] init];
+    [self.navigationController pushViewController:addContactVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -149,37 +151,6 @@
     } else {
         return nil;
     }
-}
-
-// headerView
-//- (UIView *)drawSectionHeaderView:(NSInteger)section {
-//
-//
-//}
-
-// sectionHeader点击
-- (void)headerViewPress:(UIButton *)sender
-{
-    //    DTHGroupModel *groupModel = _dataArray[sender.tag];
-    //    UIImageView *arrowIV = objc_getAssociatedObject(sender, &arrowIVKey);
-    
-    //    if (groupModel.isOpened) {
-    //
-    //        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionTransitionNone animations:^{
-    //            arrowIV.transform = CGAffineTransformRotate(arrowIV.transform, -M_PI/2); // 在现在的基础上旋转指定角度
-    //        } completion:^(BOOL finished) {
-    //        }];
-    //
-    //    } else {
-    //
-    //        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionTransitionNone animations:^{
-    //            arrowIV.transform = CGAffineTransformRotate(arrowIV.transform, M_PI/2); // 在现在的基础上旋转指定角度
-    //        } completion:^(BOOL finished) {
-    //        }];
-    //
-    //    }
-    //    groupModel.isOpened = !groupModel.isOpened;
-    //    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:sender.tag] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

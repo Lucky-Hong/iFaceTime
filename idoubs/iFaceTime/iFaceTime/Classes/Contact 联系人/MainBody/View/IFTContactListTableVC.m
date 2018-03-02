@@ -66,6 +66,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     IFTContactDetailInfoVC *contactInfoVC = [[IFTContactDetailInfoVC alloc] init];
     [[UIWindow currentViewController].navigationController pushViewController:contactInfoVC animated:YES];
     

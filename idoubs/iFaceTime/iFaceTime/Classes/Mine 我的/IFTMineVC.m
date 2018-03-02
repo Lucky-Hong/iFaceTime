@@ -20,8 +20,8 @@
 #import "IFTMineHeaderView.h"
 #import "IFTMineCellTwo.h"
 #import "IFTMineCellOne.h"
-#import "IFTContactDetailInfoVC.h"
 #import "IFTAboutVC.h"
+#import "IFTMineInfo.h"
 
 @interface IFTMineVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -149,8 +149,8 @@
 }
 
 - (IBAction)viewContactDetailInfo:(id)sender {
-    IFTContactDetailInfoVC *contactInfoVC = [[IFTContactDetailInfoVC alloc] init];
-    [self.navigationController pushViewController:contactInfoVC animated:YES];
+    IFTMineInfo *mineInfoVC = [[IFTMineInfo alloc] init];
+    [self.navigationController pushViewController:mineInfoVC animated:YES];
 }
 
 - (IBAction)changeFeatureSwitchStatus:(id)sender {
