@@ -25,6 +25,7 @@
 @interface IFTMessageVC () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+
 @property (nonatomic, strong) NSMutableArray *groupDataArray;
 @property (nonatomic, assign) BOOL section1IsOpened;
 @property (nonatomic, assign) BOOL section2IsOpened;
@@ -81,8 +82,6 @@
             make.centerY.equalTo(self.tableView.tableHeaderView.mas_centerY);
             make.height.equalTo(@32);
         }];
-       
-        
     }
     return _tableView;
 }

@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="395" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Exchage" translatesAutoresizingMaskIntoConstraints="NO" id="QwB-Lw-0dF">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Exchange" translatesAutoresizingMaskIntoConstraints="NO" id="QwB-Lw-0dF">
                     <rect key="frame" x="15" y="8" width="28" height="28"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="28" id="cK4-Kk-lBO"/>
@@ -84,6 +84,6 @@
     </objects>
     <resources>
         <image name="Arrow_Up" width="12" height="6"/>
-        <image name="Exchage" width="28" height="28"/>
+        <image name="Exchange" width="28" height="28"/>
     </resources>
 </document>

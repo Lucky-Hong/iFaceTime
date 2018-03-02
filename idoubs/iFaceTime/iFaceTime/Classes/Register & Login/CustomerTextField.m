@@ -20,7 +20,7 @@
 
 @implementation CustomerTextField
 
-// leftView 便宜设置
+// leftView 偏移设置
 //- (CGRect)leftViewRectForBounds:(CGRect)bounds {
 //    CGRect iconRect = [super leftViewRectForBounds:bounds];
 //    iconRect.origin.x += 15; // 像右边偏15
