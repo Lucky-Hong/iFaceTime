@@ -26,13 +26,14 @@
 #import "IFTCallRecordsContainerCell.h"
 #import "IFTBaseTableView.h"
 #import "IFTMoreFunctionView.h"
+#import "IFTAddContactVC.h"
 
 @interface IFTCallRecordsVC () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (nonatomic, strong) IFTBaseTableView *tableView;
 @property (nonatomic, strong) UIScrollView *containerScrollView;
 @property (nonatomic, strong)  IFTCallRecordsContainerCell *containerCell;
-@property (nonatomic, strong) UIView *floatingView;
+@property (nonatomic, strong) IFTMoreFunctionView *floatingView;
 
 @property (nonatomic, strong) UIScrollView *titleScroll;        // 标题栏scrollView
 @property (nonatomic, strong) UIScrollView *contentScroll;      // 内容栏scrollView
@@ -78,7 +79,7 @@
     [self addRightBBI];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.floatingView];
-   
+    
 }
 
 - (void)addRightBBI {
@@ -89,8 +90,8 @@
     [btn addTarget:self action:@selector(moreFunction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
     UIBarButtonItem *rightNegativeSpacer = [[UIBarButtonItem alloc]
-                                           initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                           target:nil action:nil];
+                                            initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                            target:nil action:nil];
     rightNegativeSpacer.width = -5;
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:rightNegativeSpacer,item, nil];
 }
@@ -102,10 +103,15 @@
 
 #pragma mark - Getter
 
-- (UIView *)floatingView {
+- (IFTMoreFunctionView *)floatingView {
     if (!_floatingView) {
         _floatingView = [[IFTMoreFunctionView alloc] initWithFrame:self.view.bounds];
         _floatingView.hidden = YES;
+//        DONG_WeakSelf(self);
+//        _floatingView.selectRowBlock = ^(NSIndexPath *indexPath){
+//            IFTAddContactVC *addContactVC = [[IFTAddContactVC alloc] init];
+//            [weakself.navigationController pushViewController:addContactVC animated:YES];
+//        };
     }
     return _floatingView;
 }
@@ -156,7 +162,7 @@
 #pragma mark -  UITableViewDataDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-        return CYL_IS_IPHONE_X ? kMainScreenHeight - 64 - 65 : kMainScreenHeight - 64 - 49;
+    return CYL_IS_IPHONE_X ? kMainScreenHeight - 64 - 65 : kMainScreenHeight - 64 - 49;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -192,7 +198,7 @@
         [self.containerCell.contentView addSubview:_segmentHead];
         [self.containerCell.contentView addSubview:_segmentScroll];
     }];
-
+    
 }
 
 #pragma mark - ScrollViewDelegate

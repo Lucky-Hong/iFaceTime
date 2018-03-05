@@ -1,16 +1,16 @@
 //
-//  IFTMoreFunctionView.m
+//  IFTContactFloatingView.m
 //  iFaceTime
 //
 //  Created by yesdgq on 2018/3/5.
 //  Copyright © 2018年 yesdgq. All rights reserved.
 //
 
-#import "IFTMoreFunctionView.h"
+#import "IFTContactFloatingView.h"
 #import "IFTFloatingViewCell.h"
 #import "IFTAddContactVC.h"
 
-@interface IFTMoreFunctionView() <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
+@interface IFTContactFloatingView() <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIView *floatingBG;
 @property (nonatomic, strong) UITableView *tableView;
@@ -18,15 +18,7 @@
 
 @end
 
-@implementation IFTMoreFunctionView
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
+@implementation IFTContactFloatingView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -42,7 +34,7 @@
     [super layoutSubviews];
     
     [_floatingBG mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(136, 95));
+        make.size.mas_equalTo(CGSizeMake(136, 132));
         make.right.equalTo(self.mas_right).offset(-5);
         make.top.equalTo(self).offset(64);
     }];
@@ -57,14 +49,15 @@
 
 - (void)setupSubViews {
     self.dataArray = @[@{@"AddContact" : @"添加联系人"},
-                       @{@"DeleteRecords" : @"清空记录"}];
+                       @{@"ManageGroups" : @"分组管理"},
+                       @{@"CreatGroupChat" : @"创建群聊"}];
     
     UIView *floatingBG = [[UIView alloc] init];
     [self addSubview:floatingBG];
     _floatingBG = floatingBG;
-    UIImage *backGroundImage = [UIImage imageNamed:@"FloatingBG_CallRecords"];
-    _floatingBG.contentMode=UIViewContentModeScaleAspectFill;
-    _floatingBG.layer.contents=(__bridge id _Nullable)(backGroundImage.CGImage);
+    UIImage *backGroundImage = [UIImage imageNamed:@"FloatingBG_Contact"];
+    _floatingBG.contentMode = UIViewContentModeScaleToFill;
+    _floatingBG.layer.contents = (__bridge id _Nullable)(backGroundImage.CGImage);
     // tap
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapView:)];
     tap.numberOfTouchesRequired = 1;
@@ -121,8 +114,10 @@
         IFTAddContactVC *addContactVC = [[IFTAddContactVC alloc] init];
         UIViewController *currentVC = [UIWindow currentViewController];
         [currentVC.navigationController pushViewController:addContactVC animated:YES];
+    } else if (indexPath.row == 1) {
+        
     } else {
-        DONG_Log(@"删除记录");
+        
     }
     self.hidden = YES;
 }
@@ -130,12 +125,11 @@
 #pragma mark - UIGestureRecognizerDelegate
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    if ([touch.view isKindOfClass:[IFTMoreFunctionView class]]) {
+    if ([touch.view isKindOfClass:[IFTContactFloatingView class]]) {
         return YES;
     } else {
         return NO;
     }
 }
-
 
 @end

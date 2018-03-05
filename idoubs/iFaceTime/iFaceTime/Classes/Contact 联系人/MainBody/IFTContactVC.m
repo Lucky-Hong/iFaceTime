@@ -25,6 +25,7 @@
 #import "IFTSearchBarView.h"
 #import "IFTBaseTableView.h"
 #import "IFTAddContactVC.h"
+#import "IFTContactFloatingView.h"
 
 @interface IFTContactVC () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
@@ -33,6 +34,8 @@
 @property (nonatomic, strong) IFTContainerCell *containerCell;      // section1 容器cell
 
 @property (nonatomic, assign) BOOL canScroll; // tableView是否可以滑动(默认为YES)
+
+@property (nonatomic, strong) IFTContactFloatingView *floatingView;
 
 @end
 
@@ -45,14 +48,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.canScroll = YES;
     
-    self.section1ModelArray = [NSMutableArray arrayWithCapacity:0];
-    IFTSection1Model *myGroupMdoel = [IFTSection1Model initWithTitle:@"我的群组" iconName:@"MyGroup"];
-    IFTSection1Model *convenienceServicesMdoel = [IFTSection1Model initWithTitle:@"便民服务" iconName:@"ConvenienceServices"];
-    [_section1ModelArray addObject:myGroupMdoel];
-    [_section1ModelArray addObject:convenienceServicesMdoel];
-    
-    [self setupTableView];
-    
+    [self setupSubViews];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:@"ContactLeaveTop" object:nil];
 }
 
@@ -67,6 +63,52 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+- (void)setupSubViews {
+    [self addRightBBI];
+    self.section1ModelArray = [NSMutableArray arrayWithCapacity:0];
+    IFTSection1Model *myGroupMdoel = [IFTSection1Model initWithTitle:@"我的群组" iconName:@"MyGroup"];
+    IFTSection1Model *convenienceServicesMdoel = [IFTSection1Model initWithTitle:@"便民服务" iconName:@"ConvenienceServices"];
+    [_section1ModelArray addObject:myGroupMdoel];
+    [_section1ModelArray addObject:convenienceServicesMdoel];
+    
+    [self setupTableView];
+    [self.view addSubview:self.floatingView];
+    
+}
+
+- (void)addRightBBI {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.enlargedEdge = 15.f;
+    btn.frame = CGRectMake(0, 0, 20, 20);
+    [btn setBackgroundImage:[UIImage imageNamed:@"More"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(moreFunction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    UIBarButtonItem *rightNegativeSpacer = [[UIBarButtonItem alloc]
+                                            initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                            target:nil action:nil];
+    rightNegativeSpacer.width = -5;
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:rightNegativeSpacer,item, nil];
+}
+
+- (void)moreFunction {
+    _floatingView.hidden = !_floatingView.hidden;
+}
+
+#pragma mark - Getter
+
+- (IFTContactFloatingView *)floatingView {
+    if (!_floatingView) {
+        _floatingView = [[IFTContactFloatingView alloc] initWithFrame:self.view.bounds];
+        _floatingView.hidden = YES;
+        DONG_WeakSelf(self);
+        _floatingView.selectRowBlock = ^(NSIndexPath *indexPath){
+            IFTAddContactVC *addContactVC = [[IFTAddContactVC alloc] init];
+            [weakself.navigationController pushViewController:addContactVC animated:YES];
+        };
+    }
+    return _floatingView;
 }
 
 - (void)setupTableView {

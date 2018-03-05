@@ -38,12 +38,11 @@
 }
 
 - (void)setModel:(nullable id)model indexPath:(nullable NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        [_leftIV setImage:[UIImage imageNamed:@"AddContact"]];
-        _titleLabel.text = @"添加联系人";
-    } else if (indexPath.row == 1) {
-        [_leftIV setImage:[UIImage imageNamed:@"DeleteRecords"]];
-        _titleLabel.text = @"清空记录";
+    NSArray *dataArray = model;
+    if (indexPath.row < dataArray.count) {
+        NSDictionary *dict = dataArray[indexPath.row];
+        [_leftIV setImage:[UIImage imageNamed:dict.allKeys.firstObject]];
+        _titleLabel.text = dict.allValues.firstObject;
     }
 }
 

@@ -59,6 +59,7 @@
 		11C48FD4204CE512009208D9 /* IFTMoreFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C48FD3204CE512009208D9 /* IFTMoreFunctionView.m */; };
 		11C48FEF204CEF93009208D9 /* IFTFloatingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C48FED204CEF93009208D9 /* IFTFloatingViewCell.m */; };
 		11C48FF0204CEF93009208D9 /* IFTFloatingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C48FEE204CEF93009208D9 /* IFTFloatingViewCell.xib */; };
+		11C48FF3204D25E6009208D9 /* IFTContactFloatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C48FF2204D25E6009208D9 /* IFTContactFloatingView.m */; };
 		11DD239220410E0F001210BD /* IFTSection1Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD239120410E0F001210BD /* IFTSection1Model.m */; };
 		11DD239520410E6D001210BD /* IFTContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD239420410E6D001210BD /* IFTContactModel.m */; };
 		11DD23982041145B001210BD /* IFTContainerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD23972041145B001210BD /* IFTContainerCell.m */; };
@@ -408,6 +409,8 @@
 		11C48FEC204CEF93009208D9 /* IFTFloatingViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTFloatingViewCell.h; sourceTree = "<group>"; };
 		11C48FED204CEF93009208D9 /* IFTFloatingViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTFloatingViewCell.m; sourceTree = "<group>"; };
 		11C48FEE204CEF93009208D9 /* IFTFloatingViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTFloatingViewCell.xib; sourceTree = "<group>"; };
+		11C48FF1204D25E6009208D9 /* IFTContactFloatingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTContactFloatingView.h; sourceTree = "<group>"; };
+		11C48FF2204D25E6009208D9 /* IFTContactFloatingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTContactFloatingView.m; sourceTree = "<group>"; };
 		11DD239020410E0F001210BD /* IFTSection1Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTSection1Model.h; sourceTree = "<group>"; };
 		11DD239120410E0F001210BD /* IFTSection1Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTSection1Model.m; sourceTree = "<group>"; };
 		11DD239320410E6D001210BD /* IFTContactModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTContactModel.h; sourceTree = "<group>"; };
@@ -887,6 +890,8 @@
 				11DD23A62041757A001210BD /* IFTContactListTableVC.m */,
 				1116724D204295D600583E02 /* IFTBaseTableView.h */,
 				1116724E204295D600583E02 /* IFTBaseTableView.m */,
+				11C48FF1204D25E6009208D9 /* IFTContactFloatingView.h */,
+				11C48FF2204D25E6009208D9 /* IFTContactFloatingView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1604,6 +1609,7 @@
 				11DD23A120416856001210BD /* IFTSlideHeaderLabel.m in Sources */,
 				11E440962048EE31001385A0 /* IFTMineInfo.m in Sources */,
 				11E440B3204936AA001385A0 /* IFTAddContectSearchTextField.m in Sources */,
+				11C48FF3204D25E6009208D9 /* IFTContactFloatingView.m in Sources */,
 				11303DB120465E340092E62A /* IFTMineHeaderView.m in Sources */,
 				118DF024202D382100A309C7 /* DONG_CacheClearTool.m in Sources */,
 				113DE07420302D8B000705E9 /* IFTPulsButton.m in Sources */,

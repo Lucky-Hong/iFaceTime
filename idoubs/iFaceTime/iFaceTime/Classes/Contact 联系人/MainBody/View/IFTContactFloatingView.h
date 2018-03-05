@@ -1,5 +1,5 @@
 //
-//  IFTMoreFunctionView.h
+//  IFTContactFloatingView.h
 //  iFaceTime
 //
 //  Created by yesdgq on 2018/3/5.
@@ -10,7 +10,7 @@
 
 typedef void(^SelectRowBlock)(NSIndexPath *indexPath);
 
-@interface IFTMoreFunctionView : UIView
+@interface IFTContactFloatingView : UIView
 
 @property (nonatomic, copy) SelectRowBlock selectRowBlock;
 
