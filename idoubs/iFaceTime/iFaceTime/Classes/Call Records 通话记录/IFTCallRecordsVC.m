@@ -25,12 +25,14 @@
 #import "MLMSegmentManager.h"
 #import "IFTCallRecordsContainerCell.h"
 #import "IFTBaseTableView.h"
+#import "IFTMoreFunctionView.h"
 
 @interface IFTCallRecordsVC () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (nonatomic, strong) IFTBaseTableView *tableView;
 @property (nonatomic, strong) UIScrollView *containerScrollView;
 @property (nonatomic, strong)  IFTCallRecordsContainerCell *containerCell;
+@property (nonatomic, strong) UIView *floatingView;
 
 @property (nonatomic, strong) UIScrollView *titleScroll;        // 标题栏scrollView
 @property (nonatomic, strong) UIScrollView *contentScroll;      // 内容栏scrollView
@@ -53,7 +55,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.shouldScroll = YES;
     
-    [self.view addSubview:self.tableView];
+    [self setupSubViews];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:@"CallRecordsLeaveTop" object:nil];
 }
 
@@ -70,7 +72,43 @@
     return UIStatusBarStyleLightContent;
 }
 
+#pragma mark- private methods
+
+- (void)setupSubViews {
+    [self addRightBBI];
+    [self.view addSubview:self.tableView];
+    [self.view addSubview:self.floatingView];
+   
+}
+
+- (void)addRightBBI {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.enlargedEdge = 15.f;
+    btn.frame = CGRectMake(0, 0, 20, 20);
+    [btn setBackgroundImage:[UIImage imageNamed:@"More"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(moreFunction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    UIBarButtonItem *rightNegativeSpacer = [[UIBarButtonItem alloc]
+                                           initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                           target:nil action:nil];
+    rightNegativeSpacer.width = -5;
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:rightNegativeSpacer,item, nil];
+}
+
+- (void)moreFunction {
+    _floatingView.hidden = !_floatingView.hidden;
+}
+
+
 #pragma mark - Getter
+
+- (UIView *)floatingView {
+    if (!_floatingView) {
+        _floatingView = [[IFTMoreFunctionView alloc] initWithFrame:self.view.bounds];
+        _floatingView.hidden = YES;
+    }
+    return _floatingView;
+}
 
 - (IFTBaseTableView *)tableView {
     if (!_tableView) {

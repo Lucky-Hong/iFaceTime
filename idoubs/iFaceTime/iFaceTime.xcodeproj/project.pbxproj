@@ -56,6 +56,9 @@
 		11AFB8F5203290E000DF0104 /* IFTMyGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AFB8F3203290E000DF0104 /* IFTMyGroupCell.xib */; };
 		11AFB8F92032910600DF0104 /* IFTContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AFB8F72032910600DF0104 /* IFTContactCell.m */; };
 		11AFB8FA2032910600DF0104 /* IFTContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AFB8F82032910600DF0104 /* IFTContactCell.xib */; };
+		11C48FD4204CE512009208D9 /* IFTMoreFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C48FD3204CE512009208D9 /* IFTMoreFunctionView.m */; };
+		11C48FEF204CEF93009208D9 /* IFTFloatingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C48FED204CEF93009208D9 /* IFTFloatingViewCell.m */; };
+		11C48FF0204CEF93009208D9 /* IFTFloatingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C48FEE204CEF93009208D9 /* IFTFloatingViewCell.xib */; };
 		11DD239220410E0F001210BD /* IFTSection1Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD239120410E0F001210BD /* IFTSection1Model.m */; };
 		11DD239520410E6D001210BD /* IFTContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD239420410E6D001210BD /* IFTContactModel.m */; };
 		11DD23982041145B001210BD /* IFTContainerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DD23972041145B001210BD /* IFTContainerCell.m */; };
@@ -400,6 +403,11 @@
 		11AFB8F62032910600DF0104 /* IFTContactCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTContactCell.h; sourceTree = "<group>"; };
 		11AFB8F72032910600DF0104 /* IFTContactCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTContactCell.m; sourceTree = "<group>"; };
 		11AFB8F82032910600DF0104 /* IFTContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTContactCell.xib; sourceTree = "<group>"; };
+		11C48FD2204CE512009208D9 /* IFTMoreFunctionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTMoreFunctionView.h; sourceTree = "<group>"; };
+		11C48FD3204CE512009208D9 /* IFTMoreFunctionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTMoreFunctionView.m; sourceTree = "<group>"; };
+		11C48FEC204CEF93009208D9 /* IFTFloatingViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTFloatingViewCell.h; sourceTree = "<group>"; };
+		11C48FED204CEF93009208D9 /* IFTFloatingViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTFloatingViewCell.m; sourceTree = "<group>"; };
+		11C48FEE204CEF93009208D9 /* IFTFloatingViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTFloatingViewCell.xib; sourceTree = "<group>"; };
 		11DD239020410E0F001210BD /* IFTSection1Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTSection1Model.h; sourceTree = "<group>"; };
 		11DD239120410E0F001210BD /* IFTSection1Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTSection1Model.m; sourceTree = "<group>"; };
 		11DD239320410E6D001210BD /* IFTContactModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTContactModel.h; sourceTree = "<group>"; };
@@ -593,6 +601,11 @@
 			children = (
 				111672692042BCB400583E02 /* IFTCallRecordsTableVC.h */,
 				1116726A2042BCB400583E02 /* IFTCallRecordsTableVC.m */,
+				11C48FD2204CE512009208D9 /* IFTMoreFunctionView.h */,
+				11C48FD3204CE512009208D9 /* IFTMoreFunctionView.m */,
+				11C48FEC204CEF93009208D9 /* IFTFloatingViewCell.h */,
+				11C48FED204CEF93009208D9 /* IFTFloatingViewCell.m */,
+				11C48FEE204CEF93009208D9 /* IFTFloatingViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1435,6 +1448,7 @@
 				11303DB8204679600092E62A /* IFTMineCellOne.xib in Resources */,
 				11DD82452045471C002114B1 /* IFTContactInfoCell.xib in Resources */,
 				11AFB8FA2032910600DF0104 /* IFTContactCell.xib in Resources */,
+				11C48FF0204CEF93009208D9 /* IFTFloatingViewCell.xib in Resources */,
 				11E440A62048EFE6001385A0 /* IFTMineInfoSection3Cell.xib in Resources */,
 				112748802047D3A000821DFF /* IFTMessageCell.xib in Resources */,
 				11AFB8F5203290E000DF0104 /* IFTMyGroupCell.xib in Resources */,
@@ -1608,6 +1622,7 @@
 				11DD823B20454634002114B1 /* IFTContactDetailInfoVC.m in Sources */,
 				118DF040202D388C00A309C7 /* NSDate+Addition.m in Sources */,
 				118DF047202D388C00A309C7 /* UIButton+Addition.m in Sources */,
+				11C48FD4204CE512009208D9 /* IFTMoreFunctionView.m in Sources */,
 				118DF087202D511000A309C7 /* IFTBaseNavigationController.m in Sources */,
 				113DE06E20301ACD000705E9 /* IFTMessageVC.m in Sources */,
 				11F3915920200E15005CDFFA /* main.m in Sources */,
@@ -1642,6 +1657,7 @@
 				11F3914B20200E15005CDFFA /* AppDelegate.m in Sources */,
 				112748A12048053800821DFF /* IFTAboutVC.m in Sources */,
 				118DF041202D388C00A309C7 /* UIColor+Addition.m in Sources */,
+				11C48FEF204CEF93009208D9 /* IFTFloatingViewCell.m in Sources */,
 				118DF01F202D37FD00A309C7 /* FileManageCommon.m in Sources */,
 				1116724F204295D600583E02 /* IFTBaseTableView.m in Sources */,
 				11DD23982041145B001210BD /* IFTContainerCell.m in Sources */,

@@ -113,7 +113,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     IFTAddContactCell *cell = [IFTAddContactCell cellWithTableView:tableView];
-    [cell setModel:nil index:indexPath];
+    [cell setModel:nil indexPath:indexPath];
     return cell;
     
 }
@@ -160,7 +160,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     IFTRecommendContactCell *cell = [IFTRecommendContactCell cellWithCollectionView:collectionView indexPath:indexPath];
-//    [cell setModel:self.filmClassTitleArray IndexPath:indexPath];
+    
     return cell;
 }
 
