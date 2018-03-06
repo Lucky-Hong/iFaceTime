@@ -85,15 +85,17 @@
 - (void)addRightBBI {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.enlargedEdge = 15.f;
-    btn.frame = CGRectMake(0, 0, 20, 20);
-    [btn setBackgroundImage:[UIImage imageNamed:@"More"] forState:UIControlStateNormal];
+    btn.frame = CGRectMake(0, 0, 50, 30);
+    [btn setImage:[UIImage imageNamed:@"More"] forState:UIControlStateNormal];
+//    btn.backgroundColor = [UIColor redColor];
     [btn addTarget:self action:@selector(moreFunction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
     UIBarButtonItem *rightNegativeSpacer = [[UIBarButtonItem alloc]
                                             initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                                             target:nil action:nil];
-    rightNegativeSpacer.width = -5;
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:rightNegativeSpacer,item, nil];
+    rightNegativeSpacer.width = -30;
+
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:rightNegativeSpacer, item, nil];
 }
 
 - (void)moreFunction {

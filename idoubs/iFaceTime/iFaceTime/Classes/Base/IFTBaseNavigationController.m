@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.navigationBar.hidden = YES;
+    
     // 设置导航栏图片和颜色
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavigationBar"] forBarMetrics:UIBarMetricsDefault];
     self.navigationBar.shadowImage = [[UIImage alloc] init];
@@ -41,7 +42,6 @@
     self.navigationBar.barStyle = UIBarStyleBlack;
     // title颜色和大小
 //    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:17]}];
-    
     
     // built-in pop recognizer
     UIGestureRecognizer *recognizer = self.interactivePopGestureRecognizer;
