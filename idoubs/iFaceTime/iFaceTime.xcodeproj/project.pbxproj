@@ -25,6 +25,9 @@
 		112DD404204E8CBA00052614 /* IFTManageGroupsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DD3FF204E8CB900052614 /* IFTManageGroupsHeaderView.m */; };
 		112DD405204E8CBA00052614 /* IFTManageGroupsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DD400204E8CB900052614 /* IFTManageGroupsCell.m */; };
 		112DD406204E8CBA00052614 /* IFTManageGroupsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 112DD401204E8CB900052614 /* IFTManageGroupsCell.xib */; };
+		112DD409204E8D5900052614 /* IFTCreatGroupChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DD408204E8D5900052614 /* IFTCreatGroupChatVC.m */; };
+		112DD40D204E9DC600052614 /* IFTCreatGroupChatHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 112DD40C204E9DC600052614 /* IFTCreatGroupChatHeaderView.m */; };
+		112DD40F204E9DD300052614 /* IFTCreatGroupChatHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 112DD40E204E9DD300052614 /* IFTCreatGroupChatHeaderView.xib */; };
 		11303DB120465E340092E62A /* IFTMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303DB020465E340092E62A /* IFTMineHeaderView.m */; };
 		11303DB320465E420092E62A /* IFTMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303DB220465E420092E62A /* IFTMineHeaderView.xib */; };
 		11303DB7204679600092E62A /* IFTMineCellOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303DB5204679600092E62A /* IFTMineCellOne.m */; };
@@ -344,6 +347,11 @@
 		112DD400204E8CB900052614 /* IFTManageGroupsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFTManageGroupsCell.m; sourceTree = "<group>"; };
 		112DD401204E8CB900052614 /* IFTManageGroupsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IFTManageGroupsCell.xib; sourceTree = "<group>"; };
 		112DD402204E8CBA00052614 /* IFTManageGroupsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFTManageGroupsHeaderView.h; sourceTree = "<group>"; };
+		112DD407204E8D5900052614 /* IFTCreatGroupChatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTCreatGroupChatVC.h; sourceTree = "<group>"; };
+		112DD408204E8D5900052614 /* IFTCreatGroupChatVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTCreatGroupChatVC.m; sourceTree = "<group>"; };
+		112DD40B204E9DC600052614 /* IFTCreatGroupChatHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTCreatGroupChatHeaderView.h; sourceTree = "<group>"; };
+		112DD40C204E9DC600052614 /* IFTCreatGroupChatHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTCreatGroupChatHeaderView.m; sourceTree = "<group>"; };
+		112DD40E204E9DD300052614 /* IFTCreatGroupChatHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTCreatGroupChatHeaderView.xib; sourceTree = "<group>"; };
 		11303DAF20465E340092E62A /* IFTMineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTMineHeaderView.h; sourceTree = "<group>"; };
 		11303DB020465E340092E62A /* IFTMineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTMineHeaderView.m; sourceTree = "<group>"; };
 		11303DB220465E420092E62A /* IFTMineHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTMineHeaderView.xib; sourceTree = "<group>"; };
@@ -680,10 +688,14 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		112DD3E0204E8C6300052614 /* New Group */ = {
+		112DD3E0204E8C6300052614 /* CreatGroupChat */ = {
 			isa = PBXGroup;
 			children = (
+				112DD407204E8D5900052614 /* IFTCreatGroupChatVC.h */,
+				112DD408204E8D5900052614 /* IFTCreatGroupChatVC.m */,
+				112DD40A204E9A2C00052614 /* View */,
 			);
+			name = CreatGroupChat;
 			path = "New Group";
 			sourceTree = "<group>";
 		};
@@ -707,6 +719,16 @@
 				112DD402204E8CBA00052614 /* IFTManageGroupsHeaderView.h */,
 				112DD3FF204E8CB900052614 /* IFTManageGroupsHeaderView.m */,
 				112DD3FD204E8CB800052614 /* IFTManageGroupsHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		112DD40A204E9A2C00052614 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				112DD40B204E9DC600052614 /* IFTCreatGroupChatHeaderView.h */,
+				112DD40C204E9DC600052614 /* IFTCreatGroupChatHeaderView.m */,
+				112DD40E204E9DD300052614 /* IFTCreatGroupChatHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -760,11 +782,11 @@
 		113DE05D203019A0000705E9 /* Contact 联系人 */ = {
 			isa = PBXGroup;
 			children = (
-				112DD3E0204E8C6300052614 /* New Group */,
 				11DD823720454597002114B1 /* MainBody */,
 				11DD8238204545BD002114B1 /* ContactDetailInfo */,
 				11E440A7204902F8001385A0 /* AddContact */,
 				112DD3F8204E8C6700052614 /* ManageGroups */,
+				112DD3E0204E8C6300052614 /* CreatGroupChat */,
 			);
 			path = "Contact 联系人";
 			sourceTree = "<group>";
@@ -1509,6 +1531,7 @@
 				11E4409C2048EFB2001385A0 /* IFTMineInfoSection1Cell.xib in Resources */,
 				112748852047D69000821DFF /* IFTMessageSectionHeaderView.xib in Resources */,
 				11F3915320200E15005CDFFA /* Assets.xcassets in Resources */,
+				112DD40F204E9DD300052614 /* IFTCreatGroupChatHeaderView.xib in Resources */,
 				111672712042C2B300583E02 /* IFTCallRecordsCell.xib in Resources */,
 				11E440BD20495538001385A0 /* IFTMoreContactView.xib in Resources */,
 				11E440B020492685001385A0 /* IFTAddContactCell.xib in Resources */,
@@ -1654,6 +1677,7 @@
 				1128433B202C549C00E512AC /* IFTRegisterVC.m in Sources */,
 				118DF045202D388C00A309C7 /* NSDictionary+Log.m in Sources */,
 				111672702042C2B300583E02 /* IFTCallRecordsCell.m in Sources */,
+				112DD409204E8D5900052614 /* IFTCreatGroupChatVC.m in Sources */,
 				11DD23A120416856001210BD /* IFTSlideHeaderLabel.m in Sources */,
 				11E440962048EE31001385A0 /* IFTMineInfo.m in Sources */,
 				11E440B3204936AA001385A0 /* IFTAddContectSearchTextField.m in Sources */,
@@ -1684,6 +1708,7 @@
 				113DE06820301A9B000705E9 /* IFTCallRecordsVC.m in Sources */,
 				11303DBC204679760092E62A /* IFTMineCellTwo.m in Sources */,
 				11DD824B2045568C002114B1 /* ITFContactInfoHeadBgView.m in Sources */,
+				112DD40D204E9DC600052614 /* IFTCreatGroupChatHeaderView.m in Sources */,
 				11DD82442045471C002114B1 /* IFTContactInfoCell.m in Sources */,
 				112748832047D68500821DFF /* IFTMessageSectionHeaderView.m in Sources */,
 				11E440AA20490341001385A0 /* IFTAddContactVC.m in Sources */,

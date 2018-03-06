@@ -27,7 +27,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -35,8 +35,8 @@
     static NSString *ID = @"IFTContactCell";
     IFTContactCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) cell = [[NSBundle mainBundle] loadNibNamed:ID owner:nil options:nil][0];
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    cell.multipleSelectionBackgroundView = [UIView new];
+    cell.tintColor = [UIColor colorWithHex:@"#40C953"];
     return cell;
 }
 
