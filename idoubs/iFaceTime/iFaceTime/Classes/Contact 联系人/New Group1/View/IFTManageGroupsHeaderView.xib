@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IFTManageGroupsVC"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IFTManageGroupsHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加分组" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wO3-6g-pa3">
+                    <rect key="frame" x="47" y="18" width="193" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="Pm9-PM-dKU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.27843137254901962" green="0.52941176470588236" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddNewGroups" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-m8-wbB">
+                    <rect key="frame" x="15" y="16" width="22" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="3rW-yV-Qsb"/>
+                        <constraint firstAttribute="width" constant="22" id="vDD-ed-hap"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-mJ-mbi">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="54"/>
+                    <connections>
+                        <action selector="addNewGroup:" destination="-1" eventType="touchUpInside" id="oCx-zg-tVA"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAo-Fw-Miy">
+                    <rect key="frame" x="0.0" y="53" width="340" height="1"/>
+                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="NiO-Qv-27u"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wO3-6g-pa3" secondAttribute="trailing" constant="100" id="0ne-mC-At8"/>
+                <constraint firstItem="9kd-mJ-mbi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="9TR-IO-fGo"/>
+                <constraint firstItem="9kd-mJ-mbi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="E11-iK-tbp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="SAo-Fw-Miy" secondAttribute="bottom" id="FWV-oL-cdK"/>
+                <constraint firstItem="9kd-mJ-mbi" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="KwH-qs-hwf"/>
+                <constraint firstItem="SAo-Fw-Miy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RUh-9i-p9f"/>
+                <constraint firstItem="wO3-6g-pa3" firstAttribute="leading" secondItem="nFw-m8-wbB" secondAttribute="trailing" constant="10" id="SJg-uk-iz1"/>
+                <constraint firstItem="9kd-mJ-mbi" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ZJM-jU-WeK"/>
+                <constraint firstAttribute="trailing" secondItem="SAo-Fw-Miy" secondAttribute="trailing" id="ehE-5E-1aT"/>
+                <constraint firstItem="nFw-m8-wbB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="f2l-BV-pXR"/>
+                <constraint firstItem="nFw-m8-wbB" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="jg3-KI-ko4"/>
+                <constraint firstItem="wO3-6g-pa3" firstAttribute="centerY" secondItem="nFw-m8-wbB" secondAttribute="centerY" id="pBB-zo-Bxu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="17" y="-187"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="AddNewGroups" width="22" height="22"/>
+    </resources>
+</document>

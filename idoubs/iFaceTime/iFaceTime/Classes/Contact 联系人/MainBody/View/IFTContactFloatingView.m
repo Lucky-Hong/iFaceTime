@@ -9,7 +9,7 @@
 #import "IFTContactFloatingView.h"
 #import "IFTFloatingViewCell.h"
 #import "IFTAddContactVC.h"
-//#import "IFTManageGroupsVC.h"
+#import "IFTManageGroupsVC.h"
 //#import "IFTCreatGroupChatVC.h"
 
 @interface IFTContactFloatingView() <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
@@ -117,9 +117,9 @@
         UIViewController *currentVC = [UIWindow currentViewController];
         [currentVC.navigationController pushViewController:addContactVC animated:YES];
     } else if (indexPath.row == 1) {
-//        IFTManageGroupsVC *manageDroupsVC = [[IFTManageGroupsVC alloc] init];
-//        UIViewController *currentVC = [UIWindow currentViewController];
-//        [currentVC.navigationController pushViewController:manageDroupsVC animated:YES];
+        IFTManageGroupsVC *manageDroupsVC = [[IFTManageGroupsVC alloc] init];
+        UIViewController *currentVC = [UIWindow currentViewController];
+        [currentVC.navigationController pushViewController:manageDroupsVC animated:YES];
     } else {
 //        IFTCreatGroupChatVC *creatGroupVC = [[IFTCreatGroupChatVC alloc] init];
 //        UIViewController *currentVC = [UIWindow currentViewController];
