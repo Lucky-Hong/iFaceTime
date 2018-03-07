@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) UIButton *startGroupChatBtn;
 
 @end
 
@@ -36,18 +37,25 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    [_startGroupChatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.equalTo(self.view);
+        make.height.equalTo(@50);
+    }];
+}
+
 - (void)setUpSubViews {
     [self.view addSubview:self.tableView];
+    
     UIButton *startGroupChatBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [startGroupChatBtn setBackgroundImage:[UIImage imageNamed:@"StartGroupChatBtnBG"] forState:UIControlStateNormal];
     [startGroupChatBtn setTitle:@"发起群聊" forState:UIControlStateNormal];
     startGroupChatBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     startGroupChatBtn.titleLabel.textColor = [UIColor whiteColor];
+    startGroupChatBtn.enabled = NO;
+    _startGroupChatBtn = startGroupChatBtn;
     [self.view addSubview:startGroupChatBtn];
-    [startGroupChatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.equalTo(self.view);
-        make.height.equalTo(@50);
-    }];
 }
 
 #pragma mark - Getter
@@ -101,14 +109,31 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    DONG_Log(@"------------------------");
+    NSArray *selectedArray = [tableView indexPathsForSelectedRows];
+    if (selectedArray.count > 0) {
+        _startGroupChatBtn.enabled = YES;
+    } else {
+        _startGroupChatBtn.enabled = NO;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *selectedArray = [tableView indexPathsForSelectedRows];
+    if (selectedArray.count > 0) {
+        _startGroupChatBtn.enabled = YES;
+    } else {
+        _startGroupChatBtn.enabled = NO;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 
+- (IBAction)selectGroupExisting:(id)sender {
+    DONG_Log(@"------------------------");
+    
+}
 
 
 @end
