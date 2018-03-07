@@ -18,6 +18,13 @@
 
 #import "IFTContactCell.h"
 
+@interface IFTContactCell()
+
+@property (weak, nonatomic) IBOutlet UIImageView *avatarIV;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@end
+
 @implementation IFTContactCell
 
 - (void)awakeFromNib {
@@ -42,6 +49,12 @@
     cell.multipleSelectionBackgroundView = [UIView new];
     cell.tintColor = [UIColor colorWithHex:@"#40C953"];
     return cell;
+}
+
+- (void)setContactModel:(IFTContactModel *)contactModel {
+    _nameLabel.text = contactModel.name;
+    [_avatarIV sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"Default_Icon"]];
+    _contactModel = contactModel;
 }
 
 @end

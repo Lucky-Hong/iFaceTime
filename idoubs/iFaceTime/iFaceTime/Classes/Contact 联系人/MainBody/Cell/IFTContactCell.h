@@ -17,8 +17,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IFTContactModel.h"
 
 @interface IFTContactCell : UITableViewCell
+
+@property (nonatomic, strong) IFTContactModel *contactModel;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

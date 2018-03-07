@@ -27,5 +27,6 @@
 #import "NSString+Dong.h"
 #import "UILabel+Addition.h"
 #import "UIWindow+Addition.h"
+#import "UIImageView+WebCache.h" // SDWebImage
 
 #endif /* PrefixHeader_pch */

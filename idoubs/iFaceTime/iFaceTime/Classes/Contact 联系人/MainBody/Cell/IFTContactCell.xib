@@ -19,20 +19,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="372" height="41.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="CTV-Z6-f52">
-                        <rect key="frame" x="16" y="10" width="28" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="CTV-Z6-f52">
+                        <rect key="frame" x="15" y="4.5" width="33" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="QMj-YE-JbV"/>
+                            <constraint firstAttribute="width" constant="33" id="bvL-TB-m8q"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Anny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TD-fj-we2">
-                        <rect key="frame" x="59" y="11" width="39" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TD-fj-we2">
+                        <rect key="frame" x="53" y="11" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="s1B-Ru-Pun"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="CTV-Z6-f52" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1Zb-F9-UMu"/>
+                    <constraint firstItem="CTV-Z6-f52" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="FtE-7o-GpK"/>
+                    <constraint firstAttribute="trailing" secondItem="7TD-fj-we2" secondAttribute="trailing" constant="15" id="GgQ-nd-873"/>
+                    <constraint firstItem="7TD-fj-we2" firstAttribute="centerY" secondItem="CTV-Z6-f52" secondAttribute="centerY" id="Pdx-DS-rJy"/>
+                    <constraint firstItem="7TD-fj-we2" firstAttribute="leading" secondItem="CTV-Z6-f52" secondAttribute="trailing" constant="5" id="R7V-oo-K2F"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="avatarIV" destination="CTV-Z6-f52" id="wLu-ax-5nN"/>
+                <outlet property="nameLabel" destination="7TD-fj-we2" id="ciV-Df-yLt"/>
+            </connections>
             <point key="canvasLocation" x="37" y="16"/>
         </tableViewCell>
     </objects>

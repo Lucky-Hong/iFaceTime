@@ -26,16 +26,17 @@
 #import "IFTBaseTableView.h"
 #import "IFTAddContactVC.h"
 #import "IFTContactFloatingView.h"
+#import "IFTContactModel.h"
 
-@interface IFTContactVC () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
+@interface IFTContactVC () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) IFTBaseTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *section1ModelArray;
 @property (nonatomic, strong) IFTContainerCell *containerCell;      // section1 容器cell
+@property (nonatomic, strong) IFTContactFloatingView *floatingView;
 
 @property (nonatomic, assign) BOOL canScroll; // tableView是否可以滑动(默认为YES)
 
-@property (nonatomic, strong) IFTContactFloatingView *floatingView;
 
 @end
 
@@ -115,6 +116,7 @@
     IFTBaseTableView *tableView = [[IFTBaseTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.dataSource = self;
     tableView.delegate = self;
+
     self.tableView = tableView;
     [self.view addSubview:tableView];
     // tableHeaderView
@@ -130,7 +132,36 @@
         make.height.equalTo(@32);
     }];
     
+//    UISearchBar  *searchBar = [[UISearchBar alloc] init];
+//    searchBar.delegate = self;
+//    searchBar.placeholder = @"搜索";
+//    [searchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+//    [searchBar sizeToFit];
+//
+//    UIImage* searchBarBg = [self GetImageWithColor:[UIColor colorWithHex:@"#F0F0F6"] andHeight:32.0f];
+//    //设置背景图片
+//    [searchBar setBackgroundImage:searchBarBg];
+//    //设置背景色
+//    [searchBar setBackgroundColor:[UIColor colorWithHex:@"#F0F0F6"]];
+//    self.tableView.tableHeaderView=searchBar;
+    
 }
+
+- (UIImage*) GetImageWithColor:(UIColor*)color andHeight:(CGFloat)height
+{
+    CGRect r= CGRectMake(0.0f, 0.0f, 1.0f, height);
+    UIGraphicsBeginImageContext(r.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, r);
+    
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return img;
+}
+
 
 #pragma mark - UITableViewDataSource
 
@@ -140,7 +171,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 2;
+        return 1;
     } else {
         return 1;
     }
