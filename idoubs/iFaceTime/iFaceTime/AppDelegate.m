@@ -14,6 +14,7 @@
 #import "IFTScanCodeVC.h"
 #import "IFTPulsButton.h"
 #import "IFTTabbarConfig.h"
+#import "iOSNgnStack.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate, CYLTabBarControllerDelegate>
 

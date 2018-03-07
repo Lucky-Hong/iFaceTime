@@ -41,6 +41,9 @@
 		113DE07120301AE1000705E9 /* IFTMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 113DE07020301AE1000705E9 /* IFTMineVC.m */; };
 		113DE07420302D8B000705E9 /* IFTPulsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 113DE07320302D8B000705E9 /* IFTPulsButton.m */; };
 		113DE078203035D9000705E9 /* IFTTabbarConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 113DE077203035D9000705E9 /* IFTTabbarConfig.m */; };
+		11411FE8204FB2D9009D704F /* MBProgressHUD+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 11411FE7204FB2D9009D704F /* MBProgressHUD+Addition.m */; };
+		11411FEB204FB910009D704F /* IFTMyChatGroupsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 11411FEA204FB910009D704F /* IFTMyChatGroupsVC.m */; };
+		11411FEF204FBFEB009D704F /* IFTEditContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 11411FEE204FBFEB009D704F /* IFTEditContactVC.m */; };
 		118DF01F202D37FD00A309C7 /* FileManageCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 118DF01E202D37FD00A309C7 /* FileManageCommon.m */; };
 		118DF024202D382100A309C7 /* DONG_CacheClearTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 118DF020202D382000A309C7 /* DONG_CacheClearTool.m */; };
 		118DF025202D382100A309C7 /* DONG_AlertShowTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 118DF022202D382000A309C7 /* DONG_AlertShowTool.m */; };
@@ -105,7 +108,6 @@
 		11E440BB2049552D001385A0 /* IFTMoreContactView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E440BA2049552D001385A0 /* IFTMoreContactView.m */; };
 		11E440BD20495538001385A0 /* IFTMoreContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E440BC20495538001385A0 /* IFTMoreContactView.xib */; };
 		11F3914B20200E15005CDFFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3914A20200E15005CDFFA /* AppDelegate.m */; };
-		11F3914E20200E15005CDFFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F3914D20200E15005CDFFA /* ViewController.m */; };
 		11F3915120200E15005CDFFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F3914F20200E15005CDFFA /* Main.storyboard */; };
 		11F3915320200E15005CDFFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F3915220200E15005CDFFA /* Assets.xcassets */; };
 		11F3915620200E15005CDFFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F3915420200E15005CDFFA /* LaunchScreen.storyboard */; };
@@ -375,6 +377,12 @@
 		113DE07320302D8B000705E9 /* IFTPulsButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTPulsButton.m; sourceTree = "<group>"; };
 		113DE076203035D9000705E9 /* IFTTabbarConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTTabbarConfig.h; sourceTree = "<group>"; };
 		113DE077203035D9000705E9 /* IFTTabbarConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTTabbarConfig.m; sourceTree = "<group>"; };
+		11411FE6204FB2D9009D704F /* MBProgressHUD+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Addition.h"; sourceTree = "<group>"; };
+		11411FE7204FB2D9009D704F /* MBProgressHUD+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Addition.m"; sourceTree = "<group>"; };
+		11411FE9204FB910009D704F /* IFTMyChatGroupsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTMyChatGroupsVC.h; sourceTree = "<group>"; };
+		11411FEA204FB910009D704F /* IFTMyChatGroupsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTMyChatGroupsVC.m; sourceTree = "<group>"; };
+		11411FED204FBFEB009D704F /* IFTEditContactVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTEditContactVC.h; sourceTree = "<group>"; };
+		11411FEE204FBFEB009D704F /* IFTEditContactVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTEditContactVC.m; sourceTree = "<group>"; };
 		118DF01D202D37FD00A309C7 /* FileManageCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManageCommon.h; sourceTree = "<group>"; };
 		118DF01E202D37FD00A309C7 /* FileManageCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManageCommon.m; sourceTree = "<group>"; };
 		118DF020202D382000A309C7 /* DONG_CacheClearTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DONG_CacheClearTool.m; sourceTree = "<group>"; };
@@ -499,8 +507,6 @@
 		11F3914620200E15005CDFFA /* iFaceTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFaceTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F3914920200E15005CDFFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11F3914A20200E15005CDFFA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		11F3914C20200E15005CDFFA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		11F3914D20200E15005CDFFA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		11F3915020200E15005CDFFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11F3915220200E15005CDFFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11F3915520200E15005CDFFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -729,6 +735,8 @@
 				112DD40B204E9DC600052614 /* IFTCreatGroupChatHeaderView.h */,
 				112DD40C204E9DC600052614 /* IFTCreatGroupChatHeaderView.m */,
 				112DD40E204E9DD300052614 /* IFTCreatGroupChatHeaderView.xib */,
+				11411FE9204FB910009D704F /* IFTMyChatGroupsVC.h */,
+				11411FEA204FB910009D704F /* IFTMyChatGroupsVC.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -784,6 +792,7 @@
 			children = (
 				11DD823720454597002114B1 /* MainBody */,
 				11DD8238204545BD002114B1 /* ContactDetailInfo */,
+				11411FEC204FBFC3009D704F /* EditContact */,
 				11E440A7204902F8001385A0 /* AddContact */,
 				112DD3F8204E8C6700052614 /* ManageGroups */,
 				112DD3E0204E8C6300052614 /* CreatGroupChat */,
@@ -820,6 +829,15 @@
 				113DE077203035D9000705E9 /* IFTTabbarConfig.m */,
 			);
 			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		11411FEC204FBFC3009D704F /* EditContact */ = {
+			isa = PBXGroup;
+			children = (
+				11411FED204FBFEB009D704F /* IFTEditContactVC.h */,
+				11411FEE204FBFEB009D704F /* IFTEditContactVC.m */,
+			);
+			path = EditContact;
 			sourceTree = "<group>";
 		};
 		118DF003202D356E00A309C7 /* Classes */ = {
@@ -893,6 +911,8 @@
 				118DF030202D388800A309C7 /* UILabel+Addition.m */,
 				118DF033202D388900A309C7 /* UIView+Addition.h */,
 				118DF039202D388B00A309C7 /* UIView+Addition.m */,
+				11411FE6204FB2D9009D704F /* MBProgressHUD+Addition.h */,
+				11411FE7204FB2D9009D704F /* MBProgressHUD+Addition.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1131,8 +1151,6 @@
 			children = (
 				11F3914920200E15005CDFFA /* AppDelegate.h */,
 				11F3914A20200E15005CDFFA /* AppDelegate.m */,
-				11F3914C20200E15005CDFFA /* ViewController.h */,
-				11F3914D20200E15005CDFFA /* ViewController.m */,
 				11284338202C4D3400E512AC /* Storyboard */,
 				118DF003202D356E00A309C7 /* Classes */,
 				118DF048202D38EC00A309C7 /* Helper */,
@@ -1683,6 +1701,7 @@
 				11E440B3204936AA001385A0 /* IFTAddContectSearchTextField.m in Sources */,
 				11C48FF3204D25E6009208D9 /* IFTContactFloatingView.m in Sources */,
 				11303DB120465E340092E62A /* IFTMineHeaderView.m in Sources */,
+				11411FEB204FB910009D704F /* IFTMyChatGroupsVC.m in Sources */,
 				118DF024202D382100A309C7 /* DONG_CacheClearTool.m in Sources */,
 				113DE07420302D8B000705E9 /* IFTPulsButton.m in Sources */,
 				11DD82362045325A002114B1 /* IFTCallRecordsContainerCell.m in Sources */,
@@ -1694,7 +1713,6 @@
 				118DF08D202D7B3600A309C7 /* UIViewController+BackButtonHandler.m in Sources */,
 				112748A620480C8F00821DFF /* IFTAboutCell.m in Sources */,
 				118DF094202D89B600A309C7 /* CustomerTextField.m in Sources */,
-				11F3914E20200E15005CDFFA /* ViewController.m in Sources */,
 				11E4409B2048EFB2001385A0 /* IFTMineInfoSection1Cell.m in Sources */,
 				11AFB8F92032910600DF0104 /* IFTContactCell.m in Sources */,
 				11DD823B20454634002114B1 /* IFTContactDetailInfoVC.m in Sources */,
@@ -1737,8 +1755,10 @@
 				11DD239520410E6D001210BD /* IFTContactModel.m in Sources */,
 				1127487F2047D3A000821DFF /* IFTMessageCell.m in Sources */,
 				11F3914B20200E15005CDFFA /* AppDelegate.m in Sources */,
+				11411FEF204FBFEB009D704F /* IFTEditContactVC.m in Sources */,
 				112748A12048053800821DFF /* IFTAboutVC.m in Sources */,
 				118DF041202D388C00A309C7 /* UIColor+Addition.m in Sources */,
+				11411FE8204FB2D9009D704F /* MBProgressHUD+Addition.m in Sources */,
 				11C48FEF204CEF93009208D9 /* IFTFloatingViewCell.m in Sources */,
 				118DF01F202D37FD00A309C7 /* FileManageCommon.m in Sources */,
 				1116724F204295D600583E02 /* IFTBaseTableView.m in Sources */,

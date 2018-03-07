@@ -10,6 +10,7 @@
 #import "IFTContactInfoCell.h"
 #import "ITFContactInfoHeadBgView.h"
 #import "IFTContactInfoBottomControl.h"
+#import "IFTEditContactVC.h"
 
 @interface IFTContactDetailInfoVC () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
@@ -135,7 +136,8 @@
 }
 
 - (IBAction)editContantInfo:(id)sender {
-    DONG_Log(@"编辑");
+    IFTEditContactVC *editVC = DONG_INSTANT_VC_WITH_ID(@"Main", @"IFTEditContactVC.h");
+    [self.navigationController pushViewController:editVC animated:YES];
 }
 
 - (IBAction)shareContant:(id)sender {
