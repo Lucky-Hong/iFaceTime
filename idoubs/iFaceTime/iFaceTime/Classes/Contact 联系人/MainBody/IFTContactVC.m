@@ -28,6 +28,7 @@
 #import "IFTContactFloatingView.h"
 #import "IFTContactModel.h"
 
+
 @interface IFTContactVC () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) IFTBaseTableView *tableView;

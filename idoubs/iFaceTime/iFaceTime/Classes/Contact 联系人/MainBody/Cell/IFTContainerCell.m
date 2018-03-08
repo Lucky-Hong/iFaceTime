@@ -150,9 +150,8 @@ static const CGFloat LabelWidth = 80.f;
     // 添加子控制器
     for (int i=0; i<self.scrolTitleArr.count ;i++) {
         
-        IFTContactListTableVC *episodesVC = [[IFTContactListTableVC alloc] init];
-        [self.childViewControllers addObject:episodesVC];
-        //                    episodesVC.filmSetsArr = self.filmSetsArr;
+        IFTContactListTableVC *contactTableVC = [[IFTContactListTableVC alloc] init];
+        [self.childViewControllers addObject:contactTableVC];
         
     }
     
@@ -206,7 +205,7 @@ static const CGFloat LabelWidth = 80.f;
     
     //    [self setScrollToTopWithTableViewIndex:index];
     
-    if (vc.view.superview) return;//阻止vc重复添加
+    if (vc.view.superview) return; // 阻止vc重复添加
     vc.view.frame = scrollView.bounds;
     [self.contentScroll addSubview:vc.view];
     
@@ -259,8 +258,5 @@ static const CGFloat LabelWidth = 80.f;
     }
     _cellShouldScroll = cellShouldScroll;
 }
-
-
-
 
 @end

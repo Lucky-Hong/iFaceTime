@@ -194,7 +194,7 @@
 
 // 点击某item
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    DONG_Log(@"====================");
+    DONG_Log(@"=========模拟添加联系人===========");
 }
 
 - (IBAction)toSeeMoreRecommand:(id)sender {

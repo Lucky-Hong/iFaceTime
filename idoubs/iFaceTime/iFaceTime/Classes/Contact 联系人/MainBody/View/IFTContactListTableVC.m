@@ -37,11 +37,8 @@
     self.tableView.tableFooterView = [UIView new];
     self.tableView.sectionIndexBackgroundColor = [UIColor clearColor];
     self.tableView.sectionIndexColor = [UIColor darkGrayColor];
-    self.dataArray = [NSMutableArray arrayWithObjects:@"李白",@"张三",@"重庆",@"重量",@"调节",@"调用",@"小白",@"小明",@"千珏",@"黄家驹", @"鼠标",@"hello",@"多美丽",@"肯德基",@"登记", @"大奔", @"周傅", @"爱德华", @"啦文琪羊", @"文强", @"过段时间", @"等等", @"各个", @"宵夜", @"贝尔",@"而结婚", @"返回*", @"你还", @"与非门", @"是的", @"模块", @"没做",@"俄文", @"咳嗽", @"232", @"fh",@"C罗",@"邓肯", nil];
-
-    self.groupTitleArray = [NSMutableArray arrayWithCapacity:0];
-    self.groupDataArray = [NSMutableArray arrayWithCapacity:0];
-    [self handleDataArray:self.dataArray GroupDataArray:self.groupDataArray GroupTitleArray:self.groupTitleArray];
+    
+    [self loadLocalContactData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,10 +46,23 @@
     
 }
 
+- (void)loadLocalContactData {
+    self.dataArray = [NSMutableArray arrayWithObjects:@"李白",@"张三",@"重庆",@"重量",@"调节",@"调用",@"小白",@"小明",@"千珏",@"黄家驹", @"鼠标",@"hello",@"多美丽",@"肯德基",@"登记", @"大奔", @"周傅", @"爱德华", @"啦文琪羊", @"文强", @"过段时间", @"等等", @"各个", @"宵夜", @"贝尔",@"而结婚", @"返回*", @"你还", @"与非门", @"是的", @"模块", @"没做",@"俄文", @"咳嗽", @"232", @"fh",@"C罗",@"邓肯", nil];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        self.groupTitleArray = [NSMutableArray arrayWithCapacity:0];
+        self.groupDataArray = [NSMutableArray arrayWithCapacity:0];
+        [self handleDataArray:self.dataArray GroupDataArray:self.groupDataArray GroupTitleArray:self.groupTitleArray];
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self.tableView reloadData];
+        });
+    });
+}
+
 - (NSString *)transform:(NSString *)chinese {
     NSMutableString *pinyin = [chinese mutableCopy];
     CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformMandarinLatin, NO);
-    CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformStripCombiningMarks, NO);
+    CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformStripCombiningMarks, NO); // 这一行是去声调的
     
     return [pinyin uppercaseString];
 }
@@ -67,7 +77,7 @@
         NSString * obj2FirstLetter = [[self transform:obj2] substringToIndex:1];
         return [obj1FirstLetter compare:obj2FirstLetter];
     }];
-    for(NSString * name in dataArray){
+    for(NSString * name in dataArray) {
         currentFirstLetter = [[self transform:name] substringToIndex:1];
         if(![lastFirstLetter isEqualToString:currentFirstLetter]){
             groupCurrentDataArray = [[NSMutableArray alloc] init];
