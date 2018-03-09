@@ -64,7 +64,6 @@
 
 - (void)createQRCodeWithContent:(NSString *)contentStr avatar:(NSString *)img {
     _qrImgView.image = [ZXingWrapper createCodeWithString:contentStr size:_qrImgView.bounds.size CodeFomart:kBarcodeFormatQRCode];
-    
     CGSize logoSize = CGSizeMake(30, 30);
     self.logoImgView = [self roundCornerWithImage:[UIImage imageNamed:img] size:logoSize];
     _logoImgView.bounds = CGRectMake(0, 0, logoSize.width, logoSize.height);

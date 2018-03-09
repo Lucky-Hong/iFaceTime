@@ -7,17 +7,26 @@
 //
 
 #import "IFTCallRecordsCell.h"
+#import "IFTContactDetailInfoVC.h"
+
+@interface IFTCallRecordsCell()
+
+@property (weak, nonatomic) IBOutlet UIButton *detailInfoButton;
+
+
+@end
+
 
 @implementation IFTCallRecordsCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    _detailInfoButton.enlargedEdge = 15.f;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -28,6 +37,11 @@
     //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
+}
+
+- (IBAction)viewContactDetailInfo:(id)sender {
+    IFTContactDetailInfoVC *contactInfoVC = [[IFTContactDetailInfoVC alloc] init];
+    [[UIWindow currentViewController].navigationController pushViewController:contactInfoVC animated:YES];
 }
 
 @end

@@ -11,6 +11,7 @@
 @interface IFTCallRecordsContainerCell : UITableViewCell
 
 @property (nonatomic, assign) BOOL cellShouldScroll;
+
 + (instancetype _Nullable)cellWithTableView:(UITableView *_Nonnull)tableView;
 
 @end
