@@ -19,7 +19,7 @@
 #import "IFTScanCodeVC.h"
 #import "LBXScanVideoZoomView.h"
 
-
+ 
 @interface IFTScanCodeVC ()
 
 
