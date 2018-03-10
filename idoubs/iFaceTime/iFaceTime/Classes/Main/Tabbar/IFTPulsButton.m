@@ -101,7 +101,7 @@
 
 - (void)clickPublish {
     IFTScanCodeVC *scanCodeVC = [[IFTScanCodeVC alloc] init];
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    scanCodeVC.isVideoZoom = YES;
     [self.cyl_tabBarController presentViewController:scanCodeVC animated:YES completion:nil];
 }
 

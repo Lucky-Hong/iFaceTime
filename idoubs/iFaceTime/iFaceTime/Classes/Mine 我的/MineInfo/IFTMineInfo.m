@@ -10,6 +10,7 @@
 #import "IFTMineInfoSection1Cell.h"
 #import "IFTMineInfoSection2Cell.h"
 #import "IFTMineInfoSection3Cell.h"
+#import "IFTMyQrCodeVC.h"
 
 @interface IFTMineInfo () <UITableViewDelegate, UITableViewDataSource>
 
@@ -106,7 +107,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES]; // 取消选中
-    
+    if (indexPath.section == 0) {
+        
+    } else if (indexPath.section == 1) {
+        switch (indexPath.row) {
+            case 0:
+                
+                break;
+                
+            case 1:
+                
+                break;
+                
+            case 2:
+            {
+                IFTMyQrCodeVC *qrCodeVC = [[IFTMyQrCodeVC alloc] init];
+                [self.navigationController pushViewController:qrCodeVC animated:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 @end

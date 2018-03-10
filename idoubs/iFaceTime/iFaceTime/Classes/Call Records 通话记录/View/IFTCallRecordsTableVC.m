@@ -8,7 +8,6 @@
 
 #import "IFTCallRecordsTableVC.h"
 #import "IFTCallRecordsCell.h"
-#import "IFTContactDetailInfoVC.h"
 
 @interface IFTCallRecordsTableVC ()
 
@@ -56,8 +55,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    IFTContactDetailInfoVC *contactInfoVC = [[IFTContactDetailInfoVC alloc] init];
-    [[UIWindow currentViewController].navigationController pushViewController:contactInfoVC animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    DONG_Log(@"拨打电话");
 }
 
 #pragma mark - UIScrollView

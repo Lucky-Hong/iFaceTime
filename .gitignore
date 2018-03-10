@@ -28,6 +28,7 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 project.xcworkspace
+LBXScanTypes.h
 
 *.lock
 *.swp

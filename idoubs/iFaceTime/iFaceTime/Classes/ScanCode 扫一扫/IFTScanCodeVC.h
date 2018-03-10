@@ -17,8 +17,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LBXScanViewController.h"
 
+@interface IFTScanCodeVC : LBXScanViewController
 
-@interface IFTScanCodeVC : UIViewController
+@property (nonatomic, assign) BOOL isVideoZoom;
+
 
 @end

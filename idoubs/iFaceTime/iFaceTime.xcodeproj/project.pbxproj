@@ -11,6 +11,7 @@
 		1116726B2042BCB400583E02 /* IFTCallRecordsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116726A2042BCB400583E02 /* IFTCallRecordsTableVC.m */; };
 		111672702042C2B300583E02 /* IFTCallRecordsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116726E2042C2B300583E02 /* IFTCallRecordsCell.m */; };
 		111672712042C2B300583E02 /* IFTCallRecordsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1116726F2042C2B300583E02 /* IFTCallRecordsCell.xib */; };
+		111B7FA120527AF40036CC6B /* IFTMyQrCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7FA020527AF40036CC6B /* IFTMyQrCodeVC.m */; };
 		1127487F2047D3A000821DFF /* IFTMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1127487D2047D3A000821DFF /* IFTMessageCell.m */; };
 		112748802047D3A000821DFF /* IFTMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1127487E2047D3A000821DFF /* IFTMessageCell.xib */; };
 		112748832047D68500821DFF /* IFTMessageSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 112748822047D68500821DFF /* IFTMessageSectionHeaderView.m */; };
@@ -326,6 +327,8 @@
 		1116726D2042C2B300583E02 /* IFTCallRecordsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTCallRecordsCell.h; sourceTree = "<group>"; };
 		1116726E2042C2B300583E02 /* IFTCallRecordsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTCallRecordsCell.m; sourceTree = "<group>"; };
 		1116726F2042C2B300583E02 /* IFTCallRecordsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTCallRecordsCell.xib; sourceTree = "<group>"; };
+		111B7F9F20527AF40036CC6B /* IFTMyQrCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTMyQrCodeVC.h; sourceTree = "<group>"; };
+		111B7FA020527AF40036CC6B /* IFTMyQrCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTMyQrCodeVC.m; sourceTree = "<group>"; };
 		1127487C2047D3A000821DFF /* IFTMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTMessageCell.h; sourceTree = "<group>"; };
 		1127487D2047D3A000821DFF /* IFTMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTMessageCell.m; sourceTree = "<group>"; };
 		1127487E2047D3A000821DFF /* IFTMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IFTMessageCell.xib; sourceTree = "<group>"; };
@@ -650,6 +653,15 @@
 				11DD82352045325A002114B1 /* IFTCallRecordsContainerCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		111B7F9E20527ACC0036CC6B /* MyQrCode */ = {
+			isa = PBXGroup;
+			children = (
+				111B7F9F20527AF40036CC6B /* IFTMyQrCodeVC.h */,
+				111B7FA020527AF40036CC6B /* IFTMyQrCodeVC.m */,
+			);
+			path = MyQrCode;
 			sourceTree = "<group>";
 		};
 		112748642047D37E00821DFF /* View */ = {
@@ -1075,6 +1087,7 @@
 				11E440942048EE31001385A0 /* IFTMineInfo.h */,
 				11E440952048EE31001385A0 /* IFTMineInfo.m */,
 				11E440972048EF44001385A0 /* View */,
+				111B7F9E20527ACC0036CC6B /* MyQrCode */,
 			);
 			path = MineInfo;
 			sourceTree = "<group>";
@@ -1729,6 +1742,7 @@
 				11DD824B2045568C002114B1 /* ITFContactInfoHeadBgView.m in Sources */,
 				112DD40D204E9DC600052614 /* IFTCreatGroupChatHeaderView.m in Sources */,
 				11DD82442045471C002114B1 /* IFTContactInfoCell.m in Sources */,
+				111B7FA120527AF40036CC6B /* IFTMyQrCodeVC.m in Sources */,
 				112748832047D68500821DFF /* IFTMessageSectionHeaderView.m in Sources */,
 				11E440AA20490341001385A0 /* IFTAddContactVC.m in Sources */,
 				11DD23A72041757A001210BD /* IFTContactListTableVC.m in Sources */,
@@ -1853,7 +1867,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DOUBANGO_HOME = ../../doubango;
-				DOUBANGO_LIBS = "$DOUBANGO_HOME/thirdparties/iphone/lib/universal";
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1872,7 +1886,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				NGN_STACK_HOME = "$DOUBANGO_HOME/thirdparties/iphone/lib/universal";
+				NGN_STACK_HOME = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
@@ -1912,7 +1926,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DOUBANGO_HOME = ../../doubango;
-				DOUBANGO_LIBS = "$DOUBANGO_HOME/thirdparties/iphone/lib/universal";
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1925,7 +1939,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				NGN_STACK_HOME = "$DOUBANGO_HOME/thirdparties/iphone/lib/universal";
+				NGN_STACK_HOME = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1941,7 +1955,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = G4AJY6HV7T;
 				DOUBANGO_HOME = ../../doubango;
-				DOUBANGO_LIBS = "$DOUBANGO_HOME/thirdparties/iphone/lib/universal";
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
@@ -1949,17 +1963,17 @@
 				HEADER_SEARCH_PATHS = (
 					"$NGN_STACK_HOME/common-ngn-stack",
 					"$NGN_STACK_HOME/ios-ngn-stack",
-					"$DOUBANGO_HOME/bindings/_common",
-					"$DOUBANGO_HOME/tinySMS/include",
-					"$DOUBANGO_HOME/tinyHTTP/include",
-					"$DOUBANGO_HOME/tinySIP/include",
-					"$DOUBANGO/HOME/tinyMSRP/include",
-					"$DOUBANGO_HOME/tinyMEDIA/include",
-					"$DOUBANGO_HOME/tinyNET/src",
-					"$DOUBANGO_HOME/tinySAK/src",
-					"$DOUBANGO_HOME/tinyDAV/include",
-					"$DOUBANGO_HOME/thirdparties/common/include",
-					"$DOUBANGO_HOME/tinySDP/include",
+					$DOUBANGO_HOME/bindings/_common,
+					$DOUBANGO_HOME/tinySMS/include,
+					$DOUBANGO_HOME/tinyHTTP/include,
+					$DOUBANGO_HOME/tinySIP/include,
+					$DOUBANGO/HOME/tinyMSRP/include,
+					$DOUBANGO_HOME/tinyMEDIA/include,
+					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/tinySAK/src,
+					$DOUBANGO_HOME/tinyDAV/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
+					$DOUBANGO_HOME/tinySDP/include,
 					"../common-ngn-stack",
 					"../ios-ngn-stack",
 				);
@@ -1968,9 +1982,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$DOUBANGO_LIBS",
+					$DOUBANGO_LIBS,
 				);
-				NGN_STACK_HOME = "$DOUBANGO_HOME/thirdparties/iphone/lib/universal";
+				NGN_STACK_HOME = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2016,7 +2030,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = G4AJY6HV7T;
 				DOUBANGO_HOME = ../../doubango;
-				DOUBANGO_LIBS = "$DOUBANGO_HOME/thirdparties/iphone/lib/universal";
+				DOUBANGO_LIBS = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
@@ -2024,17 +2038,17 @@
 				HEADER_SEARCH_PATHS = (
 					"$NGN_STACK_HOME/common-ngn-stack",
 					"$NGN_STACK_HOME/ios-ngn-stack",
-					"$DOUBANGO_HOME/bindings/_common",
-					"$DOUBANGO_HOME/tinySMS/include",
-					"$DOUBANGO_HOME/tinyHTTP/include",
-					"$DOUBANGO_HOME/tinySIP/include",
-					"$DOUBANGO/HOME/tinyMSRP/include",
-					"$DOUBANGO_HOME/tinyMEDIA/include",
-					"$DOUBANGO_HOME/tinyNET/src",
-					"$DOUBANGO_HOME/tinySAK/src",
-					"$DOUBANGO_HOME/tinyDAV/include",
-					"$DOUBANGO_HOME/thirdparties/common/include",
-					"$DOUBANGO_HOME/tinySDP/include",
+					$DOUBANGO_HOME/bindings/_common,
+					$DOUBANGO_HOME/tinySMS/include,
+					$DOUBANGO_HOME/tinyHTTP/include,
+					$DOUBANGO_HOME/tinySIP/include,
+					$DOUBANGO/HOME/tinyMSRP/include,
+					$DOUBANGO_HOME/tinyMEDIA/include,
+					$DOUBANGO_HOME/tinyNET/src,
+					$DOUBANGO_HOME/tinySAK/src,
+					$DOUBANGO_HOME/tinyDAV/include,
+					$DOUBANGO_HOME/thirdparties/common/include,
+					$DOUBANGO_HOME/tinySDP/include,
 					"../common-ngn-stack",
 					"../ios-ngn-stack",
 				);
@@ -2043,9 +2057,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$DOUBANGO_LIBS",
+					$DOUBANGO_LIBS,
 				);
-				NGN_STACK_HOME = "$DOUBANGO_HOME/thirdparties/iphone/lib/universal";
+				NGN_STACK_HOME = $DOUBANGO_HOME/thirdparties/iphone/lib/universal;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
